@@ -1,8 +1,8 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+'use strict';
 
+var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var path = require('path');
 
 module.exports = {
 
@@ -15,7 +15,8 @@ module.exports = {
   },
 
   entry: {
-    app: path.join(__dirname, 'src/app.js'),
+    // app: path.join(__dirname, 'src/app.js'),
+    app: path.join(__dirname, 'app/main.js'),
     common: [
       'react',
       'redux',
@@ -32,9 +33,9 @@ module.exports = {
   },
 
   output: {
-    path: path.join(__dirname, 'tmp'),
-    publicPath: '',
-    filename: '[name].js'
+    path: path.join(__dirname, '/dist/'),
+    filename: '[name].js',
+    publicPath: '/'
   },
 
   module: {
@@ -44,6 +45,8 @@ module.exports = {
         exclude: /node_modules/,
         loaders: ['react-hot', 'babel?cacheDirectory&stage=0&optional=runtime']
       },
+      { test: /\.json?$/, loader: 'json'},
+      { test: /\.css$/, loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]'},
       { test: /bootstrap\/js\//, loader: 'imports?jQuery=jquery' },
       { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,   loader: "url?limit=10000&mimetype=application/font-woff" },
       { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,  loader: "url?limit=10000&mimetype=application/font-woff" },
@@ -56,11 +59,16 @@ module.exports = {
   plugins: [
     new webpack.optimize.CommonsChunkPlugin('common', 'common.js'),
     new HtmlWebpackPlugin({
-      filename: 'index.html',
-      templateContent: '<html><head></head><body><div id=\'main\'></div></body></html>',
-      inject: true
+      template: 'app/index.tpl.html',
+      inject: 'body',
+      filename: 'index.html'
     }),
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('development')
+    }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
@@ -71,8 +79,8 @@ module.exports = {
 
   devtool: 'source-map',
 
-  devServer: {
-    contentBase: './tmp',
-    historyApiFallback: true
-  }
+  // devServer: {
+  //   contentBase: './tmp',
+  //   historyApiFallback: true
+  // }
 };

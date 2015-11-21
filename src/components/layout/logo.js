@@ -1,4 +1,5 @@
 import React, { Component, PropTypes} from 'react';
+import Sprites from '../../sprites/sprite.js';
 
 export default class Logo extends Component {
 
@@ -6,7 +7,7 @@ export default class Logo extends Component {
 
     return (
       <div>
-        [Logo]
+        <div style={Sprites.General.Logo}></div>
       </div>
     );
   }
