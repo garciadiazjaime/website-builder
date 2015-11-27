@@ -1,9 +1,6 @@
 import React, { Component, PropTypes} from 'react';
 import Sprites from '../../../sprites/sprite.js';
 
-var containerStyle = {
-  width: '1024px'
-};
 
 var btn = {
   backgroundColor: 'yellow'
@@ -24,10 +21,10 @@ export default class Banner extends Component {
   render(){
 
     return (
-      <div className="container" style={containerStyle}>
+      <div className="container">
         <div className="row">
           <div className="col-md-6 col-sm-12">
-            <div style={integralStyle}>
+            <div style={integralStyle} className="img-responsive">
               Servicio Integral <a style={btn}>></a>
             </div>
           </div>
@@ -39,7 +36,7 @@ export default class Banner extends Component {
                 <a>link</a>
               </div>
               <div className="col-md-6">
-                <div style={permitsStyle}>
+                <div style={permitsStyle} className="img-responsive">
                   <h2>PERMISOS</h2>
                   <a>link</a>
                 </div>
@@ -47,13 +44,13 @@ export default class Banner extends Component {
             </div>
             <div className="row">
               <div className="col-md-6">
-                <div style={proceduresSytle}>
+                <div style={proceduresSytle} className="img-responsive">
                   <h2>TRÁMITES</h2>
                   <a>link</a>
                 </div>
               </div>
               <div className="col-md-6">
-                <div style={insuranceStyle}>
+                <div style={insuranceStyle} className="img-responsive">
                   <h2>SEGUROS</h2>
                   <a>link</a>
                 </div>

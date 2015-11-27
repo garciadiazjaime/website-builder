@@ -9,10 +9,6 @@ var sectionStyle = {
   height: '70px'
 };
 
-var containerStyle = {
-  width: '1024px'
-};
-
 var contentStyle = {
   padding: '30px 25px 0px 50px',
   boxSizing: 'border-box'
@@ -21,21 +17,22 @@ var contentStyle = {
 var checkStyle = _.merge(Sprites.General.CheckRed, {
   display: 'inline-block',
   float: 'left',
-  marginTop: '-5px'
+  marginTop: '20px',
+  marginLeft: '25px'
 });
 
 var telephoneStyle = {
   fontSize: '16px',
   color: '#383939',
   paddingLeft: '20px',
-  marginTop: '-2px',
+  marginTop: '8px',
   display: 'inline-block'
 };
 
 var facebookStyle = _.merge(Sprites.General.Facebook, {
   display: 'inline-block',
-  position: 'absolute',
-  top: '-10px'
+  marginTop: '15px',
+  float: 'right'
 });
 
 var navbarStyle = {
@@ -47,9 +44,21 @@ var menuItemStyle = {
   color: '#4f7584',
   textTransform: 'uppercase',
   fontWeight: 'bold',
-  padding: '0 15px',
   fontSize: '12px',
-  fontFamily: 'noto-sans-bold'
+  fontFamily: 'noto-sans-bold',
+  height: '70px',
+  padding: '25px 30px 0'
+};
+
+var navStyle = {
+  paddingLeft: '100px'
+};
+
+var midStyle = {
+  width: '100px',
+  height: '100%',
+  display: 'display-bloack',
+  float: 'left'
 };
 
 export default class Menu extends Component {
@@ -59,33 +68,30 @@ export default class Menu extends Component {
 
     return (
       <div style={sectionStyle}>
-        <div className="container" style={containerStyle}>
-          <div style={contentStyle}>
-            <div className="row">
-              <div className="col-md-3 col-sm-12">
-                <span style={checkStyle}></span>
-                <a href="tel:01.800.788.04.08" style={telephoneStyle}>01.800.788.04.08</a>
-              </div>
-              <div className="col-md-8 col-sm-12">
-                <nav className="navbar navbar-default" style={navbarStyle}>
-                  <div className="container-fluid">
-                    <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                      <ul className="nav navbar-nav">
-                        <li className=""><a style={menuItemStyle}>inicio</a></li>
-                        <li><a style={menuItemStyle}>nosotros</a></li>
-                        <li><a style={menuItemStyle}>servicios</a></li>
-                        <li><a style={menuItemStyle}>blog</a></li>
-                        <li><a style={menuItemStyle}>contacto</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </nav>
-              </div>
-              <div className="col-md-1 col-sm-12">
-                <a style={facebookStyle}></a>
-              </div>
+        <div className="container">
+          <nav className="navbar navbar-default">
+            <div className="navbar-header">
+              <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-main-menu" aria-expanded="false">
+                <span className="sr-only">Toggle navigation</span>
+                <span className="icon-bar"></span>
+                <span className="icon-bar"></span>
+                <span className="icon-bar"></span>
+              </button>
+              <span style={checkStyle}></span>
+              <a className="navbar-brand" href="tel:01.800.788.04.08" style={telephoneStyle}>01.800.788.04.08</a>
             </div>
-          </div>
+            <div className="hidden-xs hidden-sm" style={midStyle}>&nbsp;</div>
+            <div className="collapse navbar-collapse" id="bs-navbar-main-menu">
+              <ul className="nav navbar-nav">
+                <li className="active"><a href="" style={menuItemStyle}>inicio</a></li>
+                <li><a href="" style={menuItemStyle}>nosotros</a></li>
+                <li><a href="" style={menuItemStyle}>servicios</a></li>
+                <li><a href="" style={menuItemStyle}>blog</a></li>
+                <li><a href="" style={menuItemStyle}>contact</a></li>
+              </ul>
+              <a style={facebookStyle} className="hidden-xs hidden-sm"></a>
+            </div>
+          </nav>
         </div>
       </div>
     );
