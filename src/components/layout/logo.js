@@ -7,7 +7,7 @@ export default class Logo extends Component {
 
     return (
       <div>
-        <div style={Sprites.General.Logo}></div>
+        <div style={Sprites.General.Logo} className="img-responsive"></div>
       </div>
     );
   }

@@ -7,9 +7,11 @@ gulp.task('sprites', function () {
     src: './resources/images/**/*.png',
     style: 'sprite.js',
     dimension: [{
-      ratio: 1, dpi: 144
+      ratio: 1, dpi: 72
     }],
     split: true,
+    orientation: 'binary-tree',
+    margin: 0,
     processor: sprityJS // The important part for sprity JS
   })
   .pipe(gulp.dest('src/sprites/'));
