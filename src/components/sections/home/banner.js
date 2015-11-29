@@ -104,7 +104,7 @@ export default class Banner extends Component {
     return (
       <div className="container">
         <div className="row" style={zeroMargin}>
-          <div className="col-md-6 col-sm-12" style={zeroPadding}>
+          <div className="col-md-6 col-sm-12 blackgroundBlackHoverOpacity" style={zeroPadding}>
             <div style={integrationStyle} className="img-responsive">
               <div style={btnContainer}>
                 <div style={text70}>Servicio Integral</div>
@@ -114,7 +114,7 @@ export default class Banner extends Component {
           </div>
           <div className="col-md-6 col-sm-12" style={zeroPadding}>
             <div className="row" style={zeroMargin}>
-              <div className="col-md-6" style={zeroPadding}>
+              <div className="col-md-6 col-sm-12 blackgroundBlackHoverOpacity" style={zeroPadding}>
                 <div style={cardA}>
                   <div className="pull-right" style={arrowBigYellowStyle}></div>
                   <br className="clear-fix" />
@@ -125,7 +125,7 @@ export default class Banner extends Component {
                   </div>
                 </div>
               </div>
-              <div className="col-md-6" style={zeroPadding}>
+              <div className="col-md-6 col-sm-12 blackgroundBlackHoverOpacity" style={zeroPadding}>
                 <div style={permitsStyle} className="img-responsive">
                   <div style={btnWithText}>
                     <h2 style={customB}>PERMISOS</h2>
@@ -135,7 +135,7 @@ export default class Banner extends Component {
               </div>
             </div>
             <div className="row" style={zeroMargin}>
-              <div className="col-md-6" style={zeroPadding}>
+              <div className="col-md-6 col-sm-12 blackgroundBlackHoverOpacity" style={zeroPadding}>
                 <div style={proceduresSytle} className="img-responsive">
                   <div style={btnWithText}>
                     <h2 style={customB}>TRÁMITES</h2>
@@ -143,7 +143,7 @@ export default class Banner extends Component {
                   </div>
                 </div>
               </div>
-              <div className="col-md-6" style={zeroPadding}>
+              <div className="col-md-6 col-sm-12 blackgroundBlackHoverOpacity" style={zeroPadding}>
                 <div style={insuranceStyle} className="img-responsive">
                   <div style={btnWithText}>
                     <h2 style={customB}>SEGUROS</h2>

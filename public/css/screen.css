@@ -28,3 +28,12 @@ a:hover {
 .navbar-nav a:hover {
   opacity: 0.7;
 }
+
+.blackgroundBlackHoverOpacity {
+  background-color: black;
+}
+
+.blackgroundBlackHoverOpacity:hover >div{
+  opacity: 0.9;
+  cursor: pointer;
+}
