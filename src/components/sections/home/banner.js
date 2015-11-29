@@ -1,13 +1,24 @@
 import React, { Component, PropTypes} from 'react';
 import Sprites from '../../../sprites/sprite.js';
 
-var integralStyle = Sprites.HomeBanner.IntegralService;
+var integrationStyle = Sprites.HomeBanner.IntegralService;
 var permitsStyle = Sprites.HomeBanner.Permits;
 var insuranceStyle = Sprites.HomeBanner.Insurance;
 var proceduresSytle = Sprites.HomeBanner.Procedures;
 
-var btn = {
-  backgroundColor: 'yellow'
+var btnYellow = {
+  backgroundColor: 'yellow',
+  width: '50px',
+  height: '30px',
+  display: 'inline-block',
+  borderRadius: '20px'
+};
+
+var btnContainer = {
+  width: '100%',
+  textAlign: 'center',
+  position: 'absolute',
+  top: '68%',
 };
 
 var zeroPadding = {
@@ -25,6 +36,19 @@ var cardA = {
   width: permitsStyle.width
 };
 
+var text70 = {
+  color: 'white',
+  fontSize: '25px',
+  fontFamily: 'noto-sans-bold',
+  paddingBottom: '15px'
+};
+
+var moreThan = {
+  top: '8px',
+  fontSize: '15px',
+  fontWeight: 'bold'
+};
+
 export default class Banner extends Component {
 
   render(){
@@ -33,8 +57,13 @@ export default class Banner extends Component {
       <div className="container">
         <div className="row" style={zeroMargin}>
           <div className="col-md-6 col-sm-12" style={zeroPadding}>
-            <div style={integralStyle} className="img-responsive">
-              Servicio Integral <a style={btn}>></a>
+            <div style={integrationStyle} className="img-responsive">
+              <div style={btnContainer}>
+                <div style={text70}>Servicio Integral</div>
+                <a style={btnYellow}>
+                  <i className="glyphicon glyphicon-menu-right" style={moreThan}></i>
+                </a>
+              </div>
             </div>
           </div>
           <div className="col-md-6 col-sm-12" style={zeroPadding}>
