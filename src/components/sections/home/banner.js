@@ -64,12 +64,41 @@ var customP = {
   margin: '17px 0 0 0'
 };
 
+var btnWithText = {
+  width: '100%',
+  textAlign: 'center',
+  position: 'absolute',
+  top: '37%'
+};
+
+var customB = {
+  fontFamily: 'noto-sans-bold',
+  fontSize: '25px',
+  color: 'white',
+  display: 'inline-block '
+};
+
+var moreThanArrowAnchor = {
+  paddingLeft: '15px'
+};
+
+var moreThanArrow = {
+  color: 'yellow',
+  top: '4px',
+  fontSize: '25px',
+  fontWeight: 'bold'
+};
+
 export default class Banner extends Component {
 
   render(){
 
     var btnYellowEl = (<a style={btnYellow}>
       <i className="glyphicon glyphicon-menu-right" style={moreThan}></i>
+    </a>);
+
+    var arrowYellowEl = (<a style={moreThanArrowAnchor}>
+      <i className="glyphicon glyphicon-menu-right" style={moreThanArrow}></i>
     </a>);
 
     return (
@@ -98,22 +127,28 @@ export default class Banner extends Component {
               </div>
               <div className="col-md-6" style={zeroPadding}>
                 <div style={permitsStyle} className="img-responsive">
-                  <h2 style={zeroMargin}>PERMISOS</h2>
-                  <a>link</a>
+                  <div style={btnWithText}>
+                    <h2 style={customB}>PERMISOS</h2>
+                    {arrowYellowEl}
+                  </div>
                 </div>
               </div>
             </div>
             <div className="row" style={zeroMargin}>
               <div className="col-md-6" style={zeroPadding}>
                 <div style={proceduresSytle} className="img-responsive">
-                  <h2 style={zeroMargin}>TRÁMITES</h2>
-                  <a>link</a>
+                  <div style={btnWithText}>
+                    <h2 style={customB}>TRÁMITES</h2>
+                    {arrowYellowEl}
+                  </div>
                 </div>
               </div>
               <div className="col-md-6" style={zeroPadding}>
                 <div style={insuranceStyle} className="img-responsive">
-                  <h2 style={zeroMargin}>SEGUROS</h2>
-                  <a>link</a>
+                  <div style={btnWithText}>
+                    <h2 style={customB}>SEGUROS</h2>
+                    {arrowYellowEl}
+                  </div>
                 </div>
               </div>
             </div>
