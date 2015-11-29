@@ -5,13 +5,15 @@ var integrationStyle = Sprites.HomeBanner.IntegralService;
 var permitsStyle = Sprites.HomeBanner.Permits;
 var insuranceStyle = Sprites.HomeBanner.Insurance;
 var proceduresSytle = Sprites.HomeBanner.Procedures;
+var arrowBigYellowStyle = Sprites.General.ArrowBigYellow;
 
 var btnYellow = {
   backgroundColor: 'yellow',
   width: '50px',
-  height: '30px',
+  height: '28px',
   display: 'inline-block',
-  borderRadius: '20px'
+  borderRadius: '20px',
+  textAlign: 'center'
 };
 
 var btnContainer = {
@@ -33,7 +35,8 @@ var cardA = {
   backgroundColor: '#f7323f',
   color: 'white',
   height: permitsStyle.height,
-  width: permitsStyle.width
+  width: permitsStyle.width,
+  padding: '18px 40px 0 20px'
 };
 
 var text70 = {
@@ -44,14 +47,30 @@ var text70 = {
 };
 
 var moreThan = {
-  top: '8px',
+  top: '7px',
   fontSize: '15px',
   fontWeight: 'bold'
+};
+
+var alignTextRight = {
+  textAlign: 'right'
+};
+
+var customText = {
+  margin: '18px 0 0 0'
+};
+
+var customP = {
+  margin: '17px 0 0 0'
 };
 
 export default class Banner extends Component {
 
   render(){
+
+    var btnYellowEl = (<a style={btnYellow}>
+      <i className="glyphicon glyphicon-menu-right" style={moreThan}></i>
+    </a>);
 
     return (
       <div className="container">
@@ -60,9 +79,7 @@ export default class Banner extends Component {
             <div style={integrationStyle} className="img-responsive">
               <div style={btnContainer}>
                 <div style={text70}>Servicio Integral</div>
-                <a style={btnYellow}>
-                  <i className="glyphicon glyphicon-menu-right" style={moreThan}></i>
-                </a>
+                {btnYellowEl}
               </div>
             </div>
           </div>
@@ -70,9 +87,13 @@ export default class Banner extends Component {
             <div className="row" style={zeroMargin}>
               <div className="col-md-6" style={zeroPadding}>
                 <div style={cardA}>
-                  <h2 style={zeroMargin}>Expertos en el Sector Transportista</h2>
-                  <p>Más de 15 años de experiencia.</p>
-                  <a>link</a>
+                  <div className="pull-right" style={arrowBigYellowStyle}></div>
+                  <br className="clear-fix" />
+                  <h2 style={customText}>Expertos en el Sector Transportista</h2>
+                  <p style={customP}>Más de 15 años de experiencia.</p>
+                  <div style={alignTextRight}>
+                    {btnYellowEl}
+                  </div>
                 </div>
               </div>
               <div className="col-md-6" style={zeroPadding}>
