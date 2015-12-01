@@ -1,5 +1,6 @@
 import React, { Component, PropTypes} from 'react';
 import Sprites from '../../../sprites/sprite.js';
+import _ from 'lodash';
 
 var integrationStyle = Sprites.HomeBanner.IntegralService;
 var permitsStyle = Sprites.HomeBanner.Permits;
@@ -91,6 +92,27 @@ var moreThanArrow = {
 
 export default class Banner extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      cardA: cardA,
+      customText: customText
+    }
+  }
+
+  componentDidMount(){
+    if (document.body.clientWidth > 320 && document.body.clientWidth < 1024) {
+      this.setState({
+        cardA: _.merge({}, cardA, {
+          paddingRight: '90px'
+        }),
+        customText: _.merge({}, customText, {
+          fontSize: '20px'
+        })
+      });
+    }
+  }
+
   render(){
 
     var btnYellowEl = (<a style={btnYellow}>
@@ -104,7 +126,7 @@ export default class Banner extends Component {
     return (
       <div className="container">
         <div className="row" style={zeroMargin}>
-          <div className="col-md-6 col-sm-12 blackgroundBlackHoverOpacity" style={zeroPadding}>
+          <div className="col-md-6 col-sm-6 blackgroundBlackHoverOpacity" style={zeroPadding}>
             <div style={integrationStyle} className="img-responsive">
               <div style={btnContainer}>
                 <div style={text70}>Servicio Integral</div>
@@ -112,20 +134,20 @@ export default class Banner extends Component {
               </div>
             </div>
           </div>
-          <div className="col-md-6 col-sm-12" style={zeroPadding}>
+          <div className="col-md-6 col-sm-6" style={zeroPadding}>
             <div className="row" style={zeroMargin}>
-              <div className="col-md-6 col-sm-12 blackgroundBlackHoverOpacity" style={zeroPadding}>
-                <div style={cardA}>
+              <div className="col-md-6 col-sm-6 blackgroundBlackHoverOpacity" style={zeroPadding}>
+                <div style={this.state.cardA}>
                   <div className="pull-right" style={arrowBigYellowStyle}></div>
                   <br className="clear-fix" />
-                  <h2 style={customText}>Expertos en el Sector Transportista</h2>
+                  <h2 style={this.state.customText}>Expertos en el Sector Transportista</h2>
                   <p style={customP}>Más de 15 años de experiencia.</p>
                   <div style={alignTextRight}>
                     {btnYellowEl}
                   </div>
                 </div>
               </div>
-              <div className="col-md-6 col-sm-12 blackgroundBlackHoverOpacity" style={zeroPadding}>
+              <div className="col-md-6 col-sm-6 blackgroundBlackHoverOpacity" style={zeroPadding}>
                 <div style={permitsStyle} className="img-responsive">
                   <div style={btnWithText}>
                     <h2 style={customB}>PERMISOS</h2>
@@ -135,7 +157,7 @@ export default class Banner extends Component {
               </div>
             </div>
             <div className="row" style={zeroMargin}>
-              <div className="col-md-6 col-sm-12 blackgroundBlackHoverOpacity" style={zeroPadding}>
+              <div className="col-md-6 col-sm-6 blackgroundBlackHoverOpacity" style={zeroPadding}>
                 <div style={proceduresSytle} className="img-responsive">
                   <div style={btnWithText}>
                     <h2 style={customB}>TRÁMITES</h2>
@@ -143,7 +165,7 @@ export default class Banner extends Component {
                   </div>
                 </div>
               </div>
-              <div className="col-md-6 col-sm-12 blackgroundBlackHoverOpacity" style={zeroPadding}>
+              <div className="col-md-6 col-sm-6 blackgroundBlackHoverOpacity" style={zeroPadding}>
                 <div style={insuranceStyle} className="img-responsive">
                   <div style={btnWithText}>
                     <h2 style={customB}>SEGUROS</h2>
