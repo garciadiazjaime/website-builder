@@ -36,6 +36,15 @@ module.exports = {
             "backgroundSize": "282px 89px"
         }
     },
+    "Home": {
+        "CamionServicios": {
+            "backgroundPosition": "-0px -0px",
+            "width": "500px",
+            "height": "500px",
+            "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-home.png')",
+            "backgroundSize": "500px 500px"
+        }
+    },
     "HomeBanner": {
         "Insurance": {
             "backgroundPosition": "-512px -0px",

@@ -125,7 +125,7 @@ export default class Banner extends Component {
 
     return (
       <div className="container">
-        <div className="row" style={zeroMargin}>
+        <div className="row">
           <div className="col-md-6 col-sm-6 blackgroundBlackHoverOpacity" style={zeroPadding}>
             <div style={integrationStyle} className="img-responsive">
               <div style={btnContainer}>
