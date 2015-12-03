@@ -28,14 +28,10 @@ var iconStyle = {
 
 export default class ButtonA extends Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   render(){
 
     return (<a style={backgroundStyle} className="yellowHover">
-          <span style={textStyle}>{this.props.title}</span>
+          <span style={textStyle}>{this.props.text}</span>
           <i className="glyphicon glyphicon-menu-right" style={iconStyle}></i>
         </a>);
   }

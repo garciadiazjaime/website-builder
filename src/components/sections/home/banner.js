@@ -1,21 +1,13 @@
 import React, { Component, PropTypes} from 'react';
 import Sprites from '../../../sprites/sprite.js';
 import _ from 'lodash';
+import ButtonB from '../../widgets/buttonB';
 
 var integrationStyle = Sprites.HomeBanner.IntegralService;
 var permitsStyle = Sprites.HomeBanner.Permits;
 var insuranceStyle = Sprites.HomeBanner.Insurance;
 var proceduresSytle = Sprites.HomeBanner.Procedures;
 var arrowBigYellowStyle = Sprites.General.ArrowBigYellow;
-
-var btnYellow = {
-  backgroundColor: 'yellow',
-  width: '50px',
-  height: '28px',
-  display: 'inline-block',
-  borderRadius: '20px',
-  textAlign: 'center'
-};
 
 var btnContainer = {
   width: '100%',
@@ -45,12 +37,6 @@ var text70 = {
   fontSize: '25px',
   fontFamily: 'noto-sans-bold',
   paddingBottom: '15px'
-};
-
-var moreThan = {
-  top: '7px',
-  fontSize: '15px',
-  fontWeight: 'bold'
 };
 
 var alignTextRight = {
@@ -115,10 +101,6 @@ export default class Banner extends Component {
 
   render(){
 
-    var btnYellowEl = (<a style={btnYellow}>
-      <i className="glyphicon glyphicon-menu-right" style={moreThan}></i>
-    </a>);
-
     var arrowYellowEl = (<a style={moreThanArrowAnchor}>
       <i className="glyphicon glyphicon-menu-right" style={moreThanArrow}></i>
     </a>);
@@ -130,7 +112,7 @@ export default class Banner extends Component {
             <div style={integrationStyle} className="img-responsive">
               <div style={btnContainer}>
                 <div style={text70}>Servicio Integral</div>
-                {btnYellowEl}
+                <ButtonB />
               </div>
             </div>
           </div>
@@ -143,7 +125,7 @@ export default class Banner extends Component {
                   <h2 style={this.state.customText}>Expertos en el Sector Transportista</h2>
                   <p style={customP}>Más de 15 años de experiencia.</p>
                   <div style={alignTextRight}>
-                    {btnYellowEl}
+                    <ButtonB />
                   </div>
                 </div>
               </div>

@@ -42,7 +42,14 @@ module.exports = {
             "width": "500px",
             "height": "500px",
             "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-home.png')",
-            "backgroundSize": "500px 500px"
+            "backgroundSize": "1093px 500px"
+        },
+        "NuevoEntrante": {
+            "backgroundPosition": "-500px -0px",
+            "width": "593px",
+            "height": "410px",
+            "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-home.png')",
+            "backgroundSize": "1093px 500px"
         }
     },
     "HomeBanner": {
