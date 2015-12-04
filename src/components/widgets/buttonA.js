@@ -29,8 +29,14 @@ var iconStyle = {
 export default class ButtonA extends Component {
 
   render(){
+    if (this.props.style && this.props.style === 'B') {
+      backgroundStyle = _.merge({}, backgroundStyle, {
+        backgroundColor: 'white',
+        color: Colors.purple
+      });
+    }
 
-    return (<a style={backgroundStyle} className="yellowHover">
+    return (<a style={backgroundStyle} className="btnHover">
           <span style={textStyle}>{this.props.text}</span>
           <i className="glyphicon glyphicon-menu-right" style={iconStyle}></i>
         </a>);

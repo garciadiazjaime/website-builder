@@ -52,9 +52,16 @@ module.exports = {
             "backgroundSize": "1093px 613px"
         },
         "SeguroCertificado": {
-            "backgroundPosition": "-500px -410px",
+            "backgroundPosition": "-113px -500px",
             "width": "72px",
             "height": "84px",
+            "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-home.png')",
+            "backgroundSize": "1093px 613px"
+        },
+        "SegurosIBK": {
+            "backgroundPosition": "-500px -410px",
+            "width": "115px",
+            "height": "59px",
             "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-home.png')",
             "backgroundSize": "1093px 613px"
         },
@@ -94,6 +101,43 @@ module.exports = {
             "height": "256px",
             "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-home-banner.png')",
             "backgroundSize": "768px 768px"
+        }
+    },
+    "Seguros": {
+        "SegurosCarros": {
+            "backgroundPosition": "-0px -0px",
+            "width": "51px",
+            "height": "51px",
+            "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-seguros.png')",
+            "backgroundSize": "153px 102px"
+        },
+        "SegurosCasas": {
+            "backgroundPosition": "-51px -0px",
+            "width": "51px",
+            "height": "51px",
+            "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-seguros.png')",
+            "backgroundSize": "153px 102px"
+        },
+        "SegurosEmpresas": {
+            "backgroundPosition": "-0px -51px",
+            "width": "51px",
+            "height": "51px",
+            "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-seguros.png')",
+            "backgroundSize": "153px 102px"
+        },
+        "SegurosMotos": {
+            "backgroundPosition": "-51px -51px",
+            "width": "51px",
+            "height": "51px",
+            "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-seguros.png')",
+            "backgroundSize": "153px 102px"
+        },
+        "SegurosPersonas": {
+            "backgroundPosition": "-102px -0px",
+            "width": "51px",
+            "height": "51px",
+            "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-seguros.png')",
+            "backgroundSize": "153px 102px"
         }
     }
 }

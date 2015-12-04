@@ -45,8 +45,8 @@ a:hover {
     cursor: pointer;
   }
 
-  .yellowHover:hover {
-    background-color: #D8BC1E !important;
+  .btnHover:hover {
+    opacity: 0.75;
   }
 }
 
