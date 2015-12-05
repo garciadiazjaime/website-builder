@@ -43,20 +43,20 @@ export default class Intro extends Component {
   render(){
 
     return (
-      <div className="container">
-        <div style={this.state.sectionStyle}>
+      <div className="container" style={this.state.sectionStyle}>
+
           <div className="row">
-            <div className="col-md-10 col-sm-12">
+            <div className="col-md-10 col-sm-8 col-xs-12">
               <Logo />
             </div>
-            <div className="col-md-2 col-sm-12">
+            <div className="col-md-2 col-sm-4 col-xs-12">
               <div className="pull-right">
                 <span style={textStyle}>Te vemos grande</span>
                 <span style={arrowStyle}></span>
               </div>
             </div>
           </div>
-        </div>
+
       </div>
     );
   }

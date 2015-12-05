@@ -63,6 +63,22 @@ var midStyle = {
 
 export default class Menu extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      menuItemStyle: menuItemStyle
+    }
+  }
+
+  componentDidMount(){
+    if (document.body.clientWidth > 320 && document.body.clientWidth < 1024) {
+      this.setState({
+        menuItemStyle: _.merge({}, menuItemStyle, {
+          padding: '25px 15px 0'
+        })
+      });
+    }
+  }
 
   render(){
 
@@ -83,13 +99,14 @@ export default class Menu extends Component {
             <div className="hidden-xs hidden-sm" style={midStyle}>&nbsp;</div>
             <div className="collapse navbar-collapse" id="bs-navbar-main-menu">
               <ul className="nav navbar-nav">
-                <li className="active"><a href="" style={menuItemStyle}>inicio</a></li>
-                <li><a href="" style={menuItemStyle}>nosotros</a></li>
-                <li><a href="" style={menuItemStyle}>servicios</a></li>
-                <li><a href="" style={menuItemStyle}>blog</a></li>
-                <li><a href="" style={menuItemStyle}>contact</a></li>
+                <li className="active"><a href="" style={this.state.menuItemStyle}>inicio</a></li>
+                <li><a href="" style={this.state.menuItemStyle}>nosotros</a></li>
+                <li><a href="" style={this.state.menuItemStyle}>servicios</a></li>
+                <li><a href="" style={this.state.menuItemStyle}>blog</a></li>
+                <li><a href="" style={this.state.menuItemStyle}>contact</a></li>
               </ul>
-              <a style={facebookStyle} className="hidden-xs hidden-sm"></a>
+              <a style={facebookStyle} className="hidden-xs"></a>
+              <a style={facebookStyle} className="hidden-xs"></a>
             </div>
           </nav>
         </div>

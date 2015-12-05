@@ -8,7 +8,7 @@
     "dev": "./node_modules/nodemon/bin/nodemon.js server.js",
     "reload": "webpack-dev-server --hot --inline",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sprites": "rm -rf src/sprites && gulp sprites && cp -r src/sprites/*.png public/images/"
+    "sprites": "rm -rf src/sprites && gulp sprites && cp -r src/sprites/*.png public/images/ && cp ./src/sprites/sprite*.png ./public/images/"
   },
   "author": "Jaime Garcia <garciadiazjaime@gmail.com>",
   "license": "MIT",
