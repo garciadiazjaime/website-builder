@@ -4,10 +4,10 @@ import Sprites from '../../sprites/sprite.js';
 export default class Logo extends Component {
 
   render(){
-
+    var style = !this.props ? Sprites.General.Logo : Sprites.General.LogoAnti;
     return (
       <div>
-        <div style={Sprites.General.Logo} className="img-responsive"></div>
+        <div style={style} className="img-responsive"></div>
       </div>
     );
   }

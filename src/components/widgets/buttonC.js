@@ -30,7 +30,6 @@ export default class ButtonC extends Component {
 
   render(){
     var imageStyle = this.getImageStyle(this.props.type);
-    console.log('imageStyle', imageStyle);
     return (<a style={wrapperStyle} className="btnHover">
           <i style={imageStyle}></i>
           <br />

@@ -1,39 +1,53 @@
 module.exports = {
     "General": {
         "ArrowBigYellow": {
-            "backgroundPosition": "-0px -47px",
+            "backgroundPosition": "-0px -94px",
             "width": "42px",
             "height": "42px",
             "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-general.png')",
-            "backgroundSize": "282px 89px"
+            "backgroundSize": "300px 136px"
         },
         "ArrowSmallYellow": {
-            "backgroundPosition": "-84px -47px",
+            "backgroundPosition": "-282px -64px",
             "width": "10px",
             "height": "10px",
             "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-general.png')",
-            "backgroundSize": "282px 89px"
+            "backgroundSize": "300px 136px"
         },
         "CheckRed": {
-            "backgroundPosition": "-67px -47px",
+            "backgroundPosition": "-282px -47px",
             "width": "17px",
             "height": "17px",
             "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-general.png')",
-            "backgroundSize": "282px 89px"
+            "backgroundSize": "300px 136px"
         },
         "Facebook": {
-            "backgroundPosition": "-42px -47px",
+            "backgroundPosition": "-65px -94px",
             "width": "25px",
             "height": "25px",
             "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-general.png')",
-            "backgroundSize": "282px 89px"
+            "backgroundSize": "300px 136px"
+        },
+        "Location": {
+            "backgroundPosition": "-42px -94px",
+            "width": "23px",
+            "height": "38px",
+            "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-general.png')",
+            "backgroundSize": "300px 136px"
+        },
+        "LogoAnti": {
+            "backgroundPosition": "-0px -0px",
+            "width": "300px",
+            "height": "47px",
+            "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-general.png')",
+            "backgroundSize": "300px 136px"
         },
         "Logo": {
-            "backgroundPosition": "-0px -0px",
+            "backgroundPosition": "-0px -47px",
             "width": "282px",
             "height": "47px",
             "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-general.png')",
-            "backgroundSize": "282px 89px"
+            "backgroundSize": "300px 136px"
         }
     },
     "Home": {
