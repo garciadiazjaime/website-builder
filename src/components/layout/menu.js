@@ -51,7 +51,7 @@ var menuItemStyle = {
 };
 
 var navStyle = {
-  paddingLeft: '100px'
+  paddingLeft: '100px'  
 };
 
 var midStyle = {
