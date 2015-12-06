@@ -1,6 +1,6 @@
 import React, { Component, PropTypes} from 'react';
 
-import Sprites from '../../../sprites/sprite.js';
+import Sprites from '../../../constants/sprite';
 import Colors from '../../../constants/colors';
 import ButtonA from '../../widgets/buttonA';
 import ButtonC from '../../widgets/buttonC';

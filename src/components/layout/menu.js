@@ -1,89 +1,70 @@
 'use strict';
 
 import React, { Component, PropTypes} from 'react';
-import Sprites from '../../sprites/sprite.js';
+import Sprites from '../../constants/sprite';
+import Colors from '../../constants/colors';
+import Fonts from '../../constants/fonts';
 import _ from 'lodash';
-import ButtonFacebook from '../widgets/ButtonFacebook';
+import ButtonD from '../widgets/ButtonD';
 
-var sectionStyle = {
-  backgroundColor: '#f3f3f4',
-  height: '70px'
-};
-
-var contentStyle = {
-  padding: '30px 25px 0px 50px',
-  boxSizing: 'border-box'
-};
-
-var checkStyle = _.merge(Sprites.General.CheckRed, {
-  display: 'inline-block',
-  float: 'left',
-  marginTop: '20px',
-  marginLeft: '25px'
-});
-
-var telephoneStyle = {
-  fontSize: '16px',
-  color: '#383939',
-  paddingLeft: '20px',
-  marginTop: '8px',
-  display: 'inline-block'
-};
-
-var facebooWrapperkStyle = {
-  marginTop: '15px',
-  float: 'right'
-};
-
-var navbarStyle = {
-  background: 'none',
-  border: 'none'
-};
-
-var menuItemStyle = {
-  color: '#4f7584',
-  textTransform: 'uppercase',
-  fontWeight: 'bold',
-  fontSize: '12px',
-  fontFamily: 'noto-sans-bold',
-  height: '70px',
-  padding: '25px 30px 0'
-};
-
-var navStyle = {
-  paddingLeft: '100px'
-};
-
-var midStyle = {
-  width: '100px',
-  height: '100%',
-  display: 'display-bloack',
-  float: 'left'
-};
 
 export default class Menu extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      menuItemStyle: menuItemStyle
-    }
+      style: {
+        section: {
+          backgroundColor: Colors.grayLight,
+          height: '70px'
+        },
+        brandWrapper: {
+          paddingTop: '13px'
+        },
+        logoWrapper: {
+          position: 'relative',
+          top: '10px',
+          float: 'left'
+        },
+        logo: _.merge(Sprites.General.Agent, {
+          display: 'inline-block'
+        }),
+        navbar: _.merge({}, Fonts.typeA, {
+          display: 'inline-block',
+          paddingTop: '10px'
+        }),
+        menuItem: _.merge({}, Fonts.typeB, {
+          height: '70px',
+          padding: '25px 30px 0'
+        }),
+        iconsWrapper: {
+          marginTop: '15px',
+          float: 'right'
+        },
+        mid: {
+          width: '100px',
+          height: '100%',
+          display: 'display-bloack',
+          float: 'left'
+        }
+      }
+    };
   }
 
   componentDidMount(){
     if (document.body.clientWidth > 320 && document.body.clientWidth < 1024) {
-      this.setState({
-        menuItemStyle: _.merge({}, menuItemStyle, {
-          padding: '25px 15px 0'
-        })
+      var state = this.state;
+      state.style.menuItem = _.merge({}, this.state.style.menuItem, {
+        padding: '25px 15px 0'
       });
+      this.setState(state);
     }
   }
 
   render(){
 
     return (
-      <div style={sectionStyle}>
+      <div style={this.state.style.section}>
         <div className="container">
           <nav className="navbar navbar-default">
             <div className="navbar-header">
@@ -93,26 +74,32 @@ export default class Menu extends Component {
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              <span style={checkStyle}></span>
-              <a className="navbar-brand" href="tel:01.800.788.04.08" style={telephoneStyle}>01.800.788.04.08</a>
+              <div style={this.state.style.brandWrapper}>
+                <div style={this.state.style.logoWrapper}>
+                  <i style={this.state.style.logo}></i>
+                </div>
+                <a className="navbar-brand" href="tel:01.800.788.04.08" style={this.state.style.navbar}>01.800.788.04.08</a>
+              </div>
             </div>
-            <div className="hidden-xs hidden-sm" style={midStyle}>&nbsp;</div>
+            <div className="hidden-xs hidden-sm" style={this.state.style.mid}>&nbsp;</div>
             <div className="collapse navbar-collapse" id="bs-navbar-main-menu">
               <ul className="nav navbar-nav">
-                <li className="active"><a href="" style={this.state.menuItemStyle}>inicio</a></li>
-                <li><a href="" style={this.state.menuItemStyle}>nosotros</a></li>
-                <li><a href="" style={this.state.menuItemStyle}>servicios</a></li>
-                <li><a href="" style={this.state.menuItemStyle}>blog</a></li>
-                <li><a href="" style={this.state.menuItemStyle}>contact</a></li>
+                <li className="active"><a href="" style={this.state.style.menuItem}>inicio</a></li>
+                <li><a href="" style={this.state.style.menuItem}>nosotros</a></li>
+                <li><a href="" style={this.state.style.menuItem}>servicios</a></li>
+                <li><a href="" style={this.state.style.menuItem}>blog</a></li>
+                <li><a href="" style={this.state.style.menuItem}>contact</a></li>
               </ul>
               <div className="hidden-xs">
-                <div style={facebooWrapperkStyle}>
-                  <ButtonFacebook />
-                </div>
-              </div>
-              <div className="hidden-xs">
-                <div style={facebooWrapperkStyle}>
-                  <ButtonFacebook />
+                <div style={this.state.style.iconsWrapper}>
+                  <div className="row">
+                    <div className="col-md-offset-2 col-md-4 col-sm-offset-2 col-sm-4">
+                      <ButtonD sprite="FACEBOOK" />
+                    </div>
+                    <div className="col-md-4 col-sm-4">
+                      <ButtonD sprite="OFFICE" />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

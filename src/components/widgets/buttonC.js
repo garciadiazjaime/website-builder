@@ -1,7 +1,7 @@
 import React, { Component, PropTypes} from 'react';
 import _ from 'lodash';
 import Colors from '../../constants/colors';
-import Sprites from '../../sprites/sprite.js';
+import Sprites from '../../constants/sprite';
 
 
 var fontStyle = {
