@@ -99,14 +99,10 @@ export default class Footer extends Component {
 
             </div>
             <div className="col-md-6 col-sm-6">
-
-                <div className="row">
-                  <h3 style={titleStyle}>Servicios</h3>
-                  <ul>
-                    {serviciosEL}
-                  </ul>
-                </div>
-
+              <h3 style={titleStyle}>Servicios</h3>
+              <ul>
+                {serviciosEL}
+              </ul>
             </div>
           </div>
 

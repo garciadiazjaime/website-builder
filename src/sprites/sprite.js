@@ -56,35 +56,35 @@ module.exports = {
             "width": "500px",
             "height": "500px",
             "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-home.png')",
-            "backgroundSize": "1093px 613px"
+            "backgroundSize": "1080px 613px"
         },
         "NuevoEntrante": {
             "backgroundPosition": "-500px -0px",
-            "width": "593px",
+            "width": "580px",
             "height": "410px",
             "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-home.png')",
-            "backgroundSize": "1093px 613px"
+            "backgroundSize": "1080px 613px"
         },
         "SeguroCertificado": {
             "backgroundPosition": "-113px -500px",
             "width": "72px",
             "height": "84px",
             "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-home.png')",
-            "backgroundSize": "1093px 613px"
+            "backgroundSize": "1080px 613px"
         },
         "SegurosIBK": {
             "backgroundPosition": "-500px -410px",
             "width": "115px",
             "height": "59px",
             "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-home.png')",
-            "backgroundSize": "1093px 613px"
+            "backgroundSize": "1080px 613px"
         },
         "SegurosCamion": {
             "backgroundPosition": "-0px -500px",
             "width": "113px",
             "height": "113px",
             "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-home.png')",
-            "backgroundSize": "1093px 613px"
+            "backgroundSize": "1080px 613px"
         }
     },
     "HomeBanner": {
