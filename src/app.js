@@ -7,7 +7,7 @@ import { devTools } from 'redux-devtools';
 import { DebugPanel, DevTools } from 'redux-devtools/lib/react';
 import DiffMonitor from 'redux-devtools-diff-monitor';
 
-import App from './components/App.js';
+import App from './components/App';
 import appReducer from './state';
 
 const initialState = {
