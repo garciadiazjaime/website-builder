@@ -52,17 +52,6 @@ export default class Banner extends Component {
               </p>
             </div>
           </div>
-          <div className="row">
-            <div className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0">
-              <h2>Nosotros</h2>
-              <p>
-                A más de 15 años de su surgimiento, nos consolidamos como una empresa de alcance binacional cuyos servicios hemos extendido hasta incluir la gestión de trámites y consultoría privada, transformando nuestro trabajo en un servicio integral capaz de satisfacer las necesidades de nuestros clientes en su totalidad.
-              </p>
-            </div>
-            <div className="col-xs-10 col-xs-offset-1 col-sm-4">
-              <h3>Nuestra misión es ayudarte a crecer</h3>
-            </div>
-          </div>
         </div>
       </div>
     );

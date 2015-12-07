@@ -14,14 +14,16 @@ import Intro from './layout/intro';
 
 // *** Nosotros ***
 import Banner from './sections/aboutus/banner';
+import Mission from './sections/aboutus/mission';
 
 export default function App() {
 
   return (
     <div>
-      <Intro />
       <Menu />
+      <Intro />
       <Banner />
+      <Mission />
       <Footer />
       <Powered />
     </div>
