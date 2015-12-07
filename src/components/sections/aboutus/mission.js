@@ -11,43 +11,30 @@ export default class Mission extends Component {
     super(props);
     this.state = {
       style: {
-        blueH2: {
-          color: Colors.blueDark,
-          textTransform: 'uppercase',
-          fontSize: '25px',
+        blueH2: _.merge({}, Fonts.typeC,{
           margin: '100px 0 50px 35px',
-          fontFamily: 'noto-sans-bold'
-        },
-        par: {
-          fontFamily: 'noto-sans-regular',
-          fontSize: '16px',
+        }),
+        par: _.merge({}, Fonts.typeA, {
           margin: '0 0 170px 35px'
-        },
-        blueH3: {
-          color: Colors.blueDark,
+        }),
+        blueH3: _.merge({}, Fonts.typeA,{
           fontSize: '30px',
           margin: ' 0',
-          fontFamily: 'noto-sans-bold'
-        },
-        blueBG: {
+          textTransform: 'none'
+        }),
+        blueBG: _.merge({}, Fonts.typeA,{
           backgroundColor: Colors.blueDark,
           textAlign: 'center',
           color: '#fff',
           padding: '60px 0 80px',
-          fontFamily: 'noto-sans-regular',
-          fontSize: '16px',
           position: 'relative'
-        },
-        yellowH3: {
+        }),
+        yellowH3: _.merge({}, Fonts.typeC, {
           color: Colors.yellow,
-          textTransform: 'uppercase',
-          fontSize: '25px',
-          margin: '0 0 30px',
-          fontFamily: 'noto-sans-bold',
-        },
-        bold: {
-          fontFamily: 'noto-sans-bold',
-        }
+          margin: '0 0 30px'
+        }},
+        bold: _.merge({}, Fonts.typeD,{
+        })
       }
     };
   }

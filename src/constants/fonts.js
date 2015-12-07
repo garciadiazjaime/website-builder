@@ -12,4 +12,13 @@ module.exports = {
     fontSize: '12px',
     textTransform: 'uppercase'
   }
+  TypeC:{
+    color: Colors.blueDark,
+    fontFamily: 'noto-sans-bold',
+    fontSize: '25px',
+    textTransform: 'uppercase'
+  }
+  TypeD:{
+    fontFamily: 'noto-sans-bold'
+  }
 }

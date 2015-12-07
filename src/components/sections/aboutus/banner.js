@@ -2,6 +2,7 @@ import React, { Component, PropTypes} from 'react';
 
 import Colors from '../../../constants/colors';
 import Sprites from '../../../constants/sprite';
+import Fonts from '../../../constants/fonts';
 
 import YellowFleck from '../../widgets/YellowFleck';
 
@@ -25,17 +26,16 @@ export default class Banner extends Component {
           MsTransform: 'translateY(-50%)',
           color: 'white'
         },
-        bannerP:{
+        bannerP: _.merge({}, Fonts.typeA,{
           marginLeft: '35px',
-          fontFamily: 'noto-sans-regular',
-          fontSize: '16px'
-        },
-        bannerH1: {
-          fontFamily: 'noto-sans-bold',
+          color: '#fff'
+        }),
+        bannerH1: _.merge({}, Fonts.typeB,{
           fontSize: '40px',
           marginLeft: '35px',
-          marginBottom: '40px'
-        }
+          marginBottom: '40px',
+          color: '#fff'
+        })
       }
     };
   }
