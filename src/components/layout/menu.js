@@ -3,6 +3,7 @@
 import React, { Component, PropTypes} from 'react';
 import Sprites from '../../sprites/sprite.js';
 import _ from 'lodash';
+import ButtonFacebook from '../widgets/ButtonFacebook';
 
 var sectionStyle = {
   backgroundColor: '#f3f3f4',
@@ -29,11 +30,10 @@ var telephoneStyle = {
   display: 'inline-block'
 };
 
-var facebookStyle = _.merge(Sprites.General.Facebook, {
-  display: 'inline-block',
+var facebooWrapperkStyle = {
   marginTop: '15px',
   float: 'right'
-});
+};
 
 var navbarStyle = {
   background: 'none',
@@ -105,8 +105,16 @@ export default class Menu extends Component {
                 <li><a href="" style={this.state.menuItemStyle}>blog</a></li>
                 <li><a href="" style={this.state.menuItemStyle}>contact</a></li>
               </ul>
-              <a style={facebookStyle} className="hidden-xs"></a>
-              <a style={facebookStyle} className="hidden-xs"></a>
+              <div className="hidden-xs">
+                <div style={facebooWrapperkStyle}>
+                  <ButtonFacebook />
+                </div>
+              </div>
+              <div className="hidden-xs">
+                <div style={facebooWrapperkStyle}>
+                  <ButtonFacebook />
+                </div>
+              </div>
             </div>
           </nav>
         </div>

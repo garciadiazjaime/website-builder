@@ -7,7 +7,7 @@ import ButtonB from '../../widgets/buttonB';
 
 var nuevoEntrante = _.merge({}, Sprites.Home.NuevoEntrante, {
   padding: '90px 0 0 250px',
-  marginLeft: '-47px'
+  marginLeft: '-22px'
 });
 
 var containerStyle = {
