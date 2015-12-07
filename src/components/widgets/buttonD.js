@@ -1,14 +1,10 @@
 import React, { Component, PropTypes} from 'react';
 import _ from 'lodash';
 import Colors from '../../constants/colors';
-import Sprites from '../../sprites/sprite.js';
+import Sprites from '../../constants/sprite';
 
 
-var facebookStyle = _.merge(Sprites.General.Facebook, {
-  display: 'inline-block'
-});
-
-export default class ButtonFacebook extends Component {
+export default class ButtonD extends Component {
 
   constructor(props) {
     super(props);
@@ -30,10 +26,12 @@ export default class ButtonFacebook extends Component {
 
   render(){
     var titleEl = this.getTitle(this.props.type);
+    var spriteStyle = this.getSprite(this.props.sprite);
+
     return (<a>
       <span style={this.state.style.title}>{titleEl}</span>
       <span style={this.state.style.iconWrapper}>
-        <i style={facebookStyle}></i>
+        <i style={spriteStyle}></i>
       </span>
     </a>);
   }
@@ -45,6 +43,19 @@ export default class ButtonFacebook extends Component {
       default:
         return null;
 
+    }
+  }
+
+  getSprite(sprite) {
+    switch (sprite) {
+      case 'FACEBOOK':
+        return _.merge(Sprites.General.Facebook, {
+          display: 'inline-block'
+        });
+      case 'OFFICE':
+        return _.merge(Sprites.General.Office, {
+          display: 'inline-block'
+        });
     }
   }
 }

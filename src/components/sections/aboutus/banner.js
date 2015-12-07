@@ -1,7 +1,9 @@
 import React, { Component, PropTypes} from 'react';
 
 import Colors from '../../../constants/colors';
-import Sprites from '../../../sprites/sprite';
+import Sprites from '../../../constants/sprite';
+
+import YellowFleck from '../../widgets/YellowFleck';
 
 
 export default class Banner extends Component {
@@ -11,8 +13,9 @@ export default class Banner extends Component {
     this.state = {
       style: {
         banner: {
-          backgroundColor: 'black',
+          backgroundImage: "url('http://127.0.0.1:3000/images/aboutUs-banner-bg.jpg')",
           height: '512px',
+          position: 'relative'
         },
         bannerContent:{
           position: 'relative',
@@ -20,7 +23,7 @@ export default class Banner extends Component {
           transform: 'translateY(-50%)',
           WebkitTransform: 'translateY(-50%)',
           MsTransform: 'translateY(-50%)',
-          color: 'white',
+          color: 'white'
         },
         bannerP:{
           marginLeft: '35px',
@@ -40,7 +43,6 @@ export default class Banner extends Component {
 
   render(){
     return (
-      <div>
         <div className="container">
           <div className="row" style={this.state.style.banner}>
             <div className="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-0" style={this.state.style.bannerContent}>
@@ -48,13 +50,12 @@ export default class Banner extends Component {
                 Expertos en el sector transportista binacional.
               </h1>
               <p style={this.state.style.bannerP}>
-                Con más de 15 años de experiencia, somos expertos en el sector transportista binacional.
+                Con más de 15 años de experiencia, somos <br />expertos en el sector transportista binacional.
               </p>
             </div>
+            <YellowFleck />
           </div>
         </div>
-      </div>
     );
   }
-
 }

@@ -13,8 +13,7 @@ import Intro from './layout/intro';
 // import Products from './sections/home/products';
 
 // *** Nosotros ***
-import Banner from './sections/aboutus/banner';
-import Mission from './sections/aboutus/mission';
+import BigPleck from './sections/aboutus/bigPleck';
 
 export default function App() {
 
@@ -22,8 +21,7 @@ export default function App() {
     <div>
       <Menu />
       <Intro />
-      <Banner />
-      <Mission />
+      <BigPleck />
       <Footer />
       <Powered />
     </div>

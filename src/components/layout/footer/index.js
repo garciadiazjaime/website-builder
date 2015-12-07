@@ -2,12 +2,10 @@ import React, { Component, PropTypes} from 'react';
 
 import Logo from '../logo';
 import Colors from '../../../constants/colors';
-import ButtonFacebook from '../../widgets/ButtonFacebook';
-import Sprites from '../../../sprites/sprite';
+import Sprites from '../../../constants/sprite';
+import ButtonD from '../../widgets/ButtonD';
 import Location from './location';
 import CallUs from './callUs';
-
-var locationStyle = Sprites.General.Location;
 
 var containerStyle = {
   backgroundColor: Colors.grayDark,
@@ -38,10 +36,6 @@ var itemStyle = {
   paddingTop: '15px'
 };
 
-var facebookWrapperStyle = {
-
-};
-
 
 export default class Footer extends Component {
 
@@ -64,8 +58,8 @@ export default class Footer extends Component {
             <div className="col-md-6 col-sm-6">
               <div className="row">
                 <div className="col-md-6 col-md-offset-4">
-                  <div style={facebookWrapperStyle}>
-                    <ButtonFacebook type="TEXT" />
+                  <div>
+                    <ButtonD type="TEXT" />
                   </div>
                 </div>
               </div>
@@ -131,6 +125,6 @@ export default class Footer extends Component {
     },{
       title: 'Consultoría y Servicio de Auditorias para Empresas Transportistas'
     }];
-    return data.map((item) => <li><a style={itemStyle}>{item.title}</a></li>);
+    return data.map((item, i) => <li key={i}><a style={itemStyle}>{item.title}</a></li>);
   }
 }

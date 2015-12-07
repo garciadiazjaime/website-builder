@@ -1,5 +1,5 @@
 import React, { Component, PropTypes} from 'react';
-import Sprites from '../../sprites/sprite.js';
+import Sprites from '../../constants/sprite';
 
 export default class Logo extends Component {
 

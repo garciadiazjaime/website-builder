@@ -1,7 +1,7 @@
 import React, { Component, PropTypes} from 'react';
 
 import Colors from '../../../constants/colors';
-import Sprites from '../../../sprites/sprite';
+import Sprites from '../../../constants/sprite';
 
 
 export default class CallUs extends Component {

@@ -1,5 +1,5 @@
 import React, { Component, PropTypes} from 'react';
-import Sprites from '../../../sprites/sprite.js';
+import Sprites from '../../../constants/sprite';
 import _ from 'lodash';
 import ButtonB from '../../widgets/buttonB';
 

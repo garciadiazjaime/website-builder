@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
-import transport from './transport.js';
-import loading from './loading.js';
+import transport from './transport';
+import loading from './loading';
 
 export default combineReducers({
 	transport,
