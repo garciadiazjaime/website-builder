@@ -5,8 +5,9 @@ import Sprites from '../../../constants/sprite';
 
 import YellowFleck from '../../widgets/YellowFleck';
 
-import Banner from '../aboutus/banner';
-import Mission from '../aboutus/mission';
+import Banner from './banner';
+import Abstract from './abstract';
+import Mission from './mission';
 
 export default class BigPleck extends Component {
 
@@ -28,6 +29,7 @@ export default class BigPleck extends Component {
     return (
         <div style={this.state.style.pleckContainer}>
           <Banner />
+          <Abstract />
           <Mission />
         </div>
     );

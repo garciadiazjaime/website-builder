@@ -2,6 +2,7 @@ import React, { Component, PropTypes} from 'react';
 
 import Colors from '../../../constants/colors';
 import Sprites from '../../../sprites/sprite';
+import Fonts from '../../../constants/fonts';
 
 import YellowFleck from '../../widgets/YellowFleck';
 
@@ -11,29 +12,19 @@ export default class Mission extends Component {
     super(props);
     this.state = {
       style: {
-        blueH2: _.merge({}, Fonts.typeC,{
-          margin: '100px 0 50px 35px',
-        }),
-        par: _.merge({}, Fonts.typeA, {
-          margin: '0 0 170px 35px'
-        }),
-        blueH3: _.merge({}, Fonts.typeA,{
-          fontSize: '30px',
-          margin: ' 0',
-          textTransform: 'none'
-        }),
-        blueBG: _.merge({}, Fonts.typeA,{
+        wrapper: _.merge({}, Fonts.typeA,{
           backgroundColor: Colors.blueDark,
           textAlign: 'center',
-          color: '#fff',
           padding: '60px 0 80px',
           position: 'relative'
         }),
-        yellowH3: _.merge({}, Fonts.typeC, {
-          color: Colors.yellow,
+        title: _.merge({}, Fonts.typeG, {
           margin: '0 0 30px'
-        }},
-        bold: _.merge({}, Fonts.typeD,{
+        }),
+        subtitle: _.merge({}, Fonts.typeH,{
+        }),
+        description: _.merge({}, Fonts.typeI,{
+
         })
       }
     };
@@ -43,24 +34,11 @@ export default class Mission extends Component {
   render(){
     return (
       <div className="container">
-        <div className="row">
-          <div className="col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0">
-            <h2 style={this.state.style.blueH2}>Nosotros</h2>
-          </div>
-          <div className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0">
-            <p style={this.state.style.par}>
-              A más de 15 años de su surgimiento, nos consolidamos como una empresa de alcance binacional cuyos servicios hemos extendido hasta incluir la gestión de trámites y consultoría privada, transformando nuestro trabajo en un servicio integral capaz de satisfacer las necesidades de nuestros clientes en su totalidad.
-            </p>
-          </div>
-          <div className="col-xs-10 col-xs-offset-1 col-sm-4">
-            <h3 style={this.state.style.blueH3}>Nuestra misión:<br />ayudarte a crecer</h3>
-          </div>
-        </div>
-        <div className="row" style={this.state.style.blueBG}>
+        <div className="row" style={this.state.style.wrapper}>
           <div className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
-            <h3 style={this.state.style.yellowH3}>Nuestra misión</h3>
-            <p style={this.state.style.bold}>Ayudarte a crecer</p>
-            <p>Ofrecer una amplia gama de productos y servicios de excelencia con coberturas y vigencias adaptables a todos nuestros clientes para así garantizar su total satisfacción e impulsar su crecimiento. En interbrokers te vemos grande.
+            <h3 style={this.state.style.title}>Nuestra misión</h3>
+            <p style={this.state.style.subtitle}>Ayudarte a crecer</p>
+            <p style={this.state.style.description}>Ofrecer una amplia gama de productos y servicios de excelencia con coberturas y vigencias adaptables a todos nuestros clientes para así garantizar su total satisfacción e impulsar su crecimiento. En interbrokers te vemos grande.
             </p>
           </div>
           <YellowFleck />
