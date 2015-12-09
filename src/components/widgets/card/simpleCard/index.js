@@ -9,23 +9,47 @@ export default class simpleCard extends Component {
   }
 
   render(){
-    var data = this.props.data;
+    var Components = this.props.data.map((item) => {
+      switch (item.type.toUpperCase()) {
+        case 'TITLE':
+          return this.getTitle(item);
+        case 'SUBTITLE':
+          return this.getSubtitle(item);
+        case 'DESCRIPTION':
+          return this.getDescription(item);
+        default:
+          return null;
+      }
+    });
     return (
       <div>
-        {
-          data.title ?
-          <h1 style={data.title.style} dangerouslySetInnerHTML={this.sanitize(data.title.text)}></h1> : null
-        }
-        {
-          data.subtitle ?
-          <h2 style={data.subtitle.style} dangerouslySetInnerHTML={this.sanitize(data.subtitle.text)}></h2> : null
-        }
-        {
-          data.description ?
-            <p style={data.description.style} dangerouslySetInnerHTML={this.sanitize(data.description.text)}></p> : null
-        }
+        {Components}
       </div>
     );
+  }
+
+  getTitle(data) {
+    if (data && _.isArray(data.text)) {
+      return data.text.map((text) => {
+        return (<h1 style={data.style} dangerouslySetInnerHTML={this.sanitize(text)}></h1>);
+      })
+    }
+  }
+
+  getSubtitle(data) {
+    if (data && _.isArray(data.text)) {
+      return data.text.map((text) => {
+        return (<h2 style={data.style} dangerouslySetInnerHTML={this.sanitize(text)}></h2>);
+      })
+    }
+  }
+
+  getDescription(data) {
+    if (data && _.isArray(data.text)) {
+      return data.text.map((text) => {
+        return (<p style={data.style} dangerouslySetInnerHTML={this.sanitize(text)}></p>);
+      })
+    }
   }
 
   sanitize(value) {
@@ -36,5 +60,5 @@ export default class simpleCard extends Component {
 }
 
 simpleCard.propTypes = {
-  data: React.PropTypes.object.isRequired
+  data: React.PropTypes.array.isRequired
 };

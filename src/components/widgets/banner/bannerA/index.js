@@ -78,14 +78,13 @@ export default class Banner extends Component {
 
   render(){
     var cards = {
-      bigCard: {
-        title: {
-          text: 'Servicio Integral',
-          style: _.merge({}, Fonts.typeC, {
-            paddingBottom: '15px'
-          })
-        }
-      }
+      bigCard: [{
+        type: 'title',
+        text: ['Servicio Integral'],
+        style: _.merge({}, Fonts.typeC, {
+          paddingBottom: '15px'
+        })
+      }]
     };
 
     var arrowYellowEl = (<a style={this.state.style.moreThanArrowAnchor}>
