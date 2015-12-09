@@ -22,6 +22,7 @@ export default class Mission extends Component {
           margin: '0 0 30px'
         }),
         subtitle: _.merge({}, Fonts.typeH,{
+          margin: '0 0 22px'
         }),
         description: _.merge({}, Fonts.typeI,{
 
