@@ -4,7 +4,7 @@ require("bootstrap-sass!./../../bootstrap-sass.config.js");
 
 import Menu from './layout/menu';
 import Intro from './layout/intro';
-import Banner from './sections/home/banner';
+import Banner from './widgets/banner/bannerA';
 import Service from './sections/home/service';
 import Entry from './sections/home/entry';
 import Cover from './sections/home/cover';
