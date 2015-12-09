@@ -47,6 +47,5 @@ module.exports = {
     color: '#fff',
     fontFamily: 'noto-sans-regular',
     fontSize: '16px'
-  },
- 
+  }
 }

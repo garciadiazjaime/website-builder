@@ -1,62 +1,64 @@
 import React, { Component, PropTypes} from 'react';
 import Sprites from '../../constants/sprite';
-
 import Logo from './logo';
 
-var sectionStyle = {
-  height: '160px',
-  padding: '57px 25px 57px 50px'
-};
-
-var rdSectionStyle = {
-  height: '100px',
-  margin: '20px 0'
-};
-
-var textStyle = {
-  color: '#4f7584',
-  fontSize: '14px',
-  display: 'inline-block',
-  marginTop: '20px'
-};
-
-var arrowStyle = Sprites.General.ArrowSmallYellow;
-arrowStyle.display = "inline-block";
 
 export default class Intro extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      sectionStyle: sectionStyle
+      style: {
+        section: {
+          height: '160px',
+          paddingTop: '57px'
+        },
+        logoWrapper: {
+          paddingLeft: '35px'
+        },
+        title: {
+          color: '#4f7584',
+          fontSize: '14px',
+          display: 'inline-block',
+          marginTop: '10px'
+        },
+        arrow: _.merge({}, Sprites.General.ArrowSmallYellow, {
+          display: 'inline-block',
+          position: 'relative',
+          top: '-8px'
+        })
+      }
     }
   }
 
   componentDidMount(){
     if (document.body.clientWidth <= 320) {
-      this.setState({
-        sectionStyle: rdSectionStyle
-      });
+      var state = this.state;
+      state.style.section = {
+        height: '100px',
+        margin: '20px 0'
+      };
+      this.setState(state);
     }
   }
 
   render(){
 
     return (
-      <div className="container" style={this.state.sectionStyle}>
-
+      <div className="container" style={this.state.style.section}>
           <div className="row">
             <div className="col-md-10 col-sm-8 col-xs-12">
-              <Logo />
+              <div style={this.state.style.logoWrapper}>
+                <Logo />
+              </div>
             </div>
             <div className="col-md-2 col-sm-4 col-xs-12">
               <div className="pull-right">
-                <span style={textStyle}>Te vemos grande</span>
-                <span style={arrowStyle}></span>
+                <span style={this.state.style.title}>Te vemos grande</span>
+                <span style={this.state.style.arrow}></span>
               </div>
             </div>
           </div>
-
       </div>
     );
   }

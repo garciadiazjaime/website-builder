@@ -1,7 +1,9 @@
 import React, { Component, PropTypes} from 'react';
-import Sprites from '../../../constants/sprite';
 import _ from 'lodash';
-import ButtonB from '../../widgets/buttonB';
+import Sprites from '../../../../constants/sprite';
+import Fonts from '../../../../constants/fonts';
+import ButtonB from '../../buttonB';
+import BigCard from './bigCard';
 
 
 export default class Banner extends Component {
@@ -10,17 +12,10 @@ export default class Banner extends Component {
     super(props);
     this.state = {
       style: {
-        integrationSprite: Sprites.HomeBanner.IntegralService,
         permitsSprite: Sprites.HomeBanner.Permits,
         insuranceSprite: Sprites.HomeBanner.Insurance,
         proceduresSprite: Sprites.HomeBanner.Procedures,
         arrowBigYellow: Sprites.General.ArrowBigYellow,
-        btnContainer: {
-          width: '100%',
-          textAlign: 'center',
-          position: 'absolute',
-          top: '68%',
-        },
         zeroPadding: {
           padding: 0,
         },
@@ -33,12 +28,6 @@ export default class Banner extends Component {
           height: Sprites.HomeBanner.Permits.height,
           width: Sprites.HomeBanner.Permits.width,
           padding: '18px 40px 0 20px'
-        },
-        text70: {
-          color: 'white',
-          fontSize: '25px',
-          fontFamily: 'noto-sans-bold',
-          paddingBottom: '15px'
         },
         alignTextRight: {
           textAlign: 'right'
@@ -88,6 +77,15 @@ export default class Banner extends Component {
   }
 
   render(){
+    var cards = {
+      bigCard: [{
+        type: 'title',
+        text: ['Servicio Integral'],
+        style: _.merge({}, Fonts.typeC, {
+          paddingBottom: '15px'
+        })
+      }]
+    };
 
     var arrowYellowEl = (<a style={this.state.style.moreThanArrowAnchor}>
       <i className="glyphicon glyphicon-menu-right" style={this.state.style.moreThanArrow}></i>
@@ -96,12 +94,9 @@ export default class Banner extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-md-6 col-sm-6 blackgroundBlackHoverOpacity" style={this.state.style.zeroPadding}>
-            <div style={this.state.style.integrationSprite} className="img-responsive">
-              <div style={this.state.style.btnContainer}>
-                <div style={this.state.style.text70}>Servicio Integral</div>
-                <ButtonB />
-              </div>
+          <div className="col-md-6 col-sm-6">
+            <div className="row blackgroundBlackHoverOpacity">
+              <BigCard data={cards.bigCard} />
             </div>
           </div>
           <div className="col-md-6 col-sm-6" style={this.state.style.zeroPadding}>
