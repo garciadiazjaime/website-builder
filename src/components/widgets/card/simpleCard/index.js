@@ -9,23 +9,31 @@ export default class simpleCard extends Component {
   }
 
   render(){
-    var Components = this.props.data.map((item) => {
-      switch (item.type.toUpperCase()) {
-        case 'TITLE':
-          return this.getTitle(item);
-        case 'SUBTITLE':
-          return this.getSubtitle(item);
-        case 'DESCRIPTION':
-          return this.getDescription(item);
-        default:
-          return null;
-      }
-    });
-    return (
-      <div>
-        {Components}
-      </div>
-    );
+    if (this.props.data) {
+      var Components = this.props.data.cards.map((item) => {
+        switch (item.type.toUpperCase()) {
+          case 'TITLE':
+            return this.getTitle(item);
+          case 'SUBTITLE':
+            return this.getSubtitle(item);
+          case 'DESCRIPTION':
+            return this.getDescription(item);
+          default:
+            return null;
+        }
+      });
+      var wrapperStyle = this.getWrapper(this.props.data.wrapper);
+      return (
+        <div style={wrapperStyle}>
+          {Components}
+        </div>
+      );
+    }
+    return null;
+  }
+
+  getWrapper(data) {
+    return data.style || null;
   }
 
   getTitle(data) {
@@ -60,5 +68,5 @@ export default class simpleCard extends Component {
 }
 
 simpleCard.propTypes = {
-  data: React.PropTypes.array.isRequired
+  data: React.PropTypes.object.isRequired
 };
