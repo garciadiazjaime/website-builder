@@ -2,8 +2,9 @@ import React, { Component, PropTypes} from 'react';
 import _ from 'lodash';
 import Sprites from '../../../../constants/sprite';
 import Fonts from '../../../../constants/fonts';
-import ButtonB from '../../buttonB';
-import BigCard from './bigCard';
+import CardA from '../../card/cardA';
+import CardB from '../../card/cardB';
+import CardC from '../../card/cardC';
 
 
 export default class Banner extends Component {
@@ -12,29 +13,15 @@ export default class Banner extends Component {
     super(props);
     this.state = {
       style: {
-        permitsSprite: Sprites.HomeBanner.Permits,
-        insuranceSprite: Sprites.HomeBanner.Insurance,
-        proceduresSprite: Sprites.HomeBanner.Procedures,
-        arrowBigYellow: Sprites.General.ArrowBigYellow,
         zeroPadding: {
           padding: 0,
         },
         zeroMargin: {
           margin: 0
         },
-        cardA: {
-          backgroundColor: '#f7323f',
-          color: 'white',
-          height: Sprites.HomeBanner.Permits.height,
-          width: Sprites.HomeBanner.Permits.width,
-          padding: '18px 40px 0 20px'
-        },
-        alignTextRight: {
-          textAlign: 'right'
-        },
-        customText: {
+        cardA: _.merge({}, Fonts.typeD, {
           margin: '18px 0 0 0'
-        },
+        }),
         customP: {
           margin: '17px 0 0 0'
         },
@@ -43,12 +30,6 @@ export default class Banner extends Component {
           textAlign: 'center',
           position: 'absolute',
           top: '37%'
-        },
-        customB: {
-          fontFamily: 'noto-sans-bold',
-          fontSize: '25px',
-          color: 'white',
-          display: 'inline-block '
         },
         moreThanArrowAnchor: {
           paddingLeft: '15px'
@@ -65,26 +46,62 @@ export default class Banner extends Component {
 
   componentDidMount(){
     if (document.body.clientWidth > 320 && document.body.clientWidth < 1024) {
-      this.setState({
-        cardA: _.merge({}, cardA, {
-          paddingRight: '90px'
-        }),
-        customText: _.merge({}, customText, {
-          fontSize: '20px'
-        })
-      });
+      // this.setState({
+      //   cardA: _.merge({}, cardA, {
+      //     paddingRight: '90px'
+      //   }),
+      //   customText: _.merge({}, customText, {
+      //     fontSize: '20px'
+      //   })
+      // });
     }
   }
 
   render(){
     var cards = {
-      bigCard: [{
-        type: 'title',
-        text: ['Servicio Integral'],
-        style: _.merge({}, Fonts.typeC, {
-          paddingBottom: '15px'
-        })
-      }]
+      CardA: {
+        elements: [{
+          type: 'title',
+          text: ['Servicio Integral'],
+          style: _.merge({}, Fonts.typeC, {
+            paddingBottom: '15px'
+          })
+        }]
+      },
+      cardA: {
+        elements: [{
+          type: 'title',
+          text: ['Expertos en el Sector Transportista'],
+          style: this.state.style.cardA
+        }, {
+          type: 'description',
+          text: ['Más de 15 años de experiencia.'],
+          style: this.state.style.customP
+        }],
+      },
+      cardB: {
+        elements:[{
+          type: 'title',
+          text: ['PERMISOS'],
+          style: _.merge({}, Fonts.typeC, {
+            paddingBottom: '15px'
+          })
+        }]
+      },
+      cardC: {
+        elements: [{
+          type: 'title',
+          text: ['TRÁMITES'],
+          style: _.merge({}, Fonts.typeC)
+        }]
+      },
+      cardD: {
+        elements: [{
+          type: 'title',
+          text: ['SEGUROS'],
+          style: _.merge({}, Fonts.typeC)
+        }]
+      }
     };
 
     var arrowYellowEl = (<a style={this.state.style.moreThanArrowAnchor}>
@@ -96,47 +113,24 @@ export default class Banner extends Component {
         <div className="row">
           <div className="col-md-6 col-sm-6">
             <div className="row blackgroundBlackHoverOpacity">
-              <BigCard data={cards.bigCard} />
+              <CardA data={cards.CardA} />
             </div>
           </div>
           <div className="col-md-6 col-sm-6" style={this.state.style.zeroPadding}>
             <div className="row" style={this.state.style.zeroMargin}>
               <div className="col-md-6 col-sm-6 blackgroundBlackHoverOpacity" style={this.state.style.zeroPadding}>
-                <div style={this.state.style.cardA}>
-                  <div className="pull-right" style={this.state.style.arrowBigYellow}></div>
-                  <br className="clear-fix" />
-                  <h2 style={this.state.style.customText}>Expertos en el Sector Transportista</h2>
-                  <p style={this.state.style.customP}>Más de 15 años de experiencia.</p>
-                  <div style={this.state.style.alignTextRight}>
-                    <ButtonB />
-                  </div>
-                </div>
+                <CardB data={cards.cardA} />
               </div>
               <div className="col-md-6 col-sm-6 blackgroundBlackHoverOpacity" style={this.state.style.zeroPadding}>
-                <div style={this.state.style.permitsSprite} className="img-responsive">
-                  <div style={this.state.style.btnWithText}>
-                    <h2 style={this.state.style.customB}>PERMISOS</h2>
-                    {arrowYellowEl}
-                  </div>
-                </div>
+                <CardC data={cards.cardB} sprite="Permits" />
               </div>
             </div>
             <div className="row" style={this.state.style.zeroMargin}>
               <div className="col-md-6 col-sm-6 blackgroundBlackHoverOpacity" style={this.state.style.zeroPadding}>
-                <div style={this.state.style.proceduresSprite} className="img-responsive">
-                  <div style={this.state.style.btnWithText}>
-                    <h2 style={this.state.style.customB}>TRÁMITES</h2>
-                    {arrowYellowEl}
-                  </div>
-                </div>
+                <CardC data={cards.cardC} sprite="Insurance" />
               </div>
               <div className="col-md-6 col-sm-6 blackgroundBlackHoverOpacity" style={this.state.style.zeroPadding}>
-                <div style={this.state.style.insuranceSprite} className="img-responsive">
-                  <div style={this.state.style.btnWithText}>
-                    <h2 style={this.state.style.customB}>SEGUROS</h2>
-                    {arrowYellowEl}
-                  </div>
-                </div>
+                <CardC data={cards.cardD} sprite="Procedures" />
               </div>
             </div>
           </div>

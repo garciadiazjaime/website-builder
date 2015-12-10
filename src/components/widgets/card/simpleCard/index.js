@@ -10,7 +10,7 @@ export default class simpleCard extends Component {
 
   render(){
     if (this.props.data) {
-      var Components = this.props.data.cards.map((item) => {
+      var Components = this.props.data.elements.map((item) => {
         switch (item.type.toUpperCase()) {
           case 'TITLE':
             return this.getTitle(item);
@@ -33,7 +33,7 @@ export default class simpleCard extends Component {
   }
 
   getWrapper(data) {
-    return data.style || null;
+    return data && _.isObject(data.style) ? data.style : null;
   }
 
   getTitle(data) {

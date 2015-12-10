@@ -6,7 +6,7 @@ import ButtonB from '../../buttonB';
 import Card from '../../card/simpleCard';
 
 
-export default class CardBig extends Component {
+export default class CardA extends Component {
 
   constructor(props) {
     super(props);
@@ -45,3 +45,7 @@ export default class CardBig extends Component {
     );
   }
 }
+
+CardA.propTypes = {
+  data: React.PropTypes.object.isRequired
+};
