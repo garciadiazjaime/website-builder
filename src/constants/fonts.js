@@ -47,5 +47,10 @@ module.exports = {
     color: '#fff',
     fontFamily: 'noto-sans-regular',
     fontSize: '16px'
+  },
+  typeJ: {
+    color: '#fff',
+    fontFamily: 'noto-sans-bold',
+    fontSize: '35px'
   }
 }

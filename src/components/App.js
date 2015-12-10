@@ -14,6 +14,7 @@ import Intro from './layout/intro';
 
 // *** Nosotros ***
 import BigPleck from './sections/aboutus/bigPleck';
+import OurTeam from './sections/aboutus/ourTeam';
 
 export default function App() {
 
@@ -22,6 +23,7 @@ export default function App() {
       <Menu />
       <Intro />
       <BigPleck />
+      <OurTeam />
       <Footer />
       <Powered />
     </div>

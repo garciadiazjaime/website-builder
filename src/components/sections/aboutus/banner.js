@@ -4,7 +4,6 @@ import Colors from '../../../constants/colors';
 import Sprites from '../../../constants/sprite';
 import Fonts from '../../../constants/fonts';
 import Card from '../../widgets/card/simpleCard';
-
 import YellowFleck from '../../widgets/YellowFleck';
 
 
