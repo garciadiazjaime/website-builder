@@ -31,5 +31,10 @@ module.exports = {
     color: Colors.white,
     fontFamily: 'noto-sans-regular',
     fontSize: '16px'
-  }
+  },
+  typeG: {
+    color: Colors.blueDark,
+    fontFamily: 'noto-sans-regular',
+    fontSize: '14px'
+  },
 }
