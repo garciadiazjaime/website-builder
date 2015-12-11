@@ -9,7 +9,8 @@ export default class simpleCard extends Component {
   }
 
   render(){
-    if (this.props.data) {
+    if (_.isArray(this.props.data.elements) && this.props.data.elements.length) {
+      var wrapperStyle = this.getWrapper(this.props.data.wrapper);
       var Components = this.props.data.elements.map((item) => {
         switch (item.type.toUpperCase()) {
           case 'TITLE':
@@ -22,7 +23,6 @@ export default class simpleCard extends Component {
             return null;
         }
       });
-      var wrapperStyle = this.getWrapper(this.props.data.wrapper);
       return (
         <div style={wrapperStyle}>
           {Components}
@@ -37,27 +37,30 @@ export default class simpleCard extends Component {
   }
 
   getTitle(data) {
-    if (data && _.isArray(data.text)) {
+    if (data && _.isArray(data.text) && data.text.length) {
       return data.text.map((text) => {
         return (<h1 style={data.style} dangerouslySetInnerHTML={this.sanitize(text)}></h1>);
       })
     }
+    return null;
   }
 
   getSubtitle(data) {
-    if (data && _.isArray(data.text)) {
+    if (data && _.isArray(data.text) && data.text.length) {
       return data.text.map((text) => {
         return (<h2 style={data.style} dangerouslySetInnerHTML={this.sanitize(text)}></h2>);
       })
     }
+    return null;
   }
 
   getDescription(data) {
-    if (data && _.isArray(data.text)) {
+    if (data && _.isArray(data.text) && data.text.length) {
       return data.text.map((text) => {
         return (<p style={data.style} dangerouslySetInnerHTML={this.sanitize(text)}></p>);
       })
     }
+    return null;
   }
 
   sanitize(value) {

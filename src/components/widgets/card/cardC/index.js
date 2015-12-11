@@ -25,16 +25,14 @@ export default class CardC extends Component {
 
     return (
       <div className="row">
-        <div className="col-md-12">
-          <div style={this.state.style.sprites[this.props.sprite]} className="img-responsive">
-            <div style={this.state.style.btnWithText}>
-              <div className="row">
-                <div className="col-md-6 col-md-offset-2">
-                  <Card data={this.props.data} />
-                </div>
-                <div className="col-md-4">
-                  <Arrow />
-                </div>
+        <div style={this.state.style.sprites[this.props.sprite]} className="img-responsive">
+          <div style={this.state.style.btnWithText}>
+            <div className="row">
+              <div className="col-md-6 col-md-offset-2 col-sm-8 col-sm-offset-1 col-xs-5 col-xs-offset-2">
+                <Card data={this.props.data} />
+              </div>
+              <div className="col-md-4 col-sm-1">
+                <Arrow />
               </div>
             </div>
           </div>

@@ -18,32 +18,37 @@ export default class CardB extends Component {
           color: Colors.white,
           height: Sprites.HomeBanner.Permits.height,
           width: Sprites.HomeBanner.Permits.width,
-          padding: '18px 40px 0 20px'
+          paddingTop: '20px',
+          paddingRight: '20px'
         },
-        arrowBigYellow: Sprites.General.ArrowBigYellow,
-        alignTextRight: {
-          textAlign: 'right'
-        }
+        arrowBigYellow: Sprites.General.ArrowBigYellow
       }
-    }
-  }
-
-  componentDidMount(){
-    if (document.body.clientWidth > 320 && document.body.clientWidth < 1024) {
-      this.setState({
-      });
     }
   }
 
   render(){
 
     return (
-      <div style={this.state.style.contentWrapper}>
-        <div className="pull-right" style={this.state.style.arrowBigYellow}></div>
-        <br className="clear-fix" />
-        <Card data={this.props.data} />
-        <div style={this.state.style.alignTextRight}>
-          <ButtonB />
+      <div className="row">
+        <div style={this.state.style.contentWrapper}>
+          <div className="col-md-12 col-sm-10">
+            <div className="row">
+              <div className="col-md-offset-10 col-sm-offset-8 col-xs-offset-10">
+                <div style={this.state.style.arrowBigYellow}></div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-md-12">
+                <Card data={this.props.data} />
+              </div>
+            </div>
+            <div className="row">
+              <br className="visible-sm" />
+              <div className="col-md-offset-9 col-md-2 col-sm-offset-7 col-sm-5 col-xs-offset-9">
+                <ButtonB />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );

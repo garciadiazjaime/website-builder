@@ -26,5 +26,10 @@ module.exports = {
     color: Colors.yellow,
     fontSize: '25px',
     fontWeight: 'bold'
+  },
+  typeF: {
+    color: Colors.white,
+    fontFamily: 'noto-sans-regular',
+    fontSize: '16px'
   }
 }
