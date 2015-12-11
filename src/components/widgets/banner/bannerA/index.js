@@ -1,5 +1,7 @@
 import React, { Component, PropTypes} from 'react';
 import _ from 'lodash';
+
+import UtilRD from '../../../../utils/rd';
 import Sprites from '../../../../constants/sprite';
 import Fonts from '../../../../constants/fonts';
 import CardA from '../../card/cardA';
@@ -12,12 +14,14 @@ export default class Banner extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      style: this.getStyle('DESKTOP')
+      style: this.getStyle()
     }
   }
 
   componentDidMount(){
-    if (document.body.clientWidth > 320 && document.body.clientWidth < 1024) {
+    const utilRD = new UtilRD();
+
+    if (utilRD.isTablet(document.body.clientWidth)) {
       this.setState({
         style: _.merge({}, this.state.style, this.getStyle('TABLET'))
       });
@@ -70,7 +74,7 @@ export default class Banner extends Component {
             paddingRight: '40px'
           })
         };
-      case 'DESKTOP':
+      default:
         return {
           cardBTitle: _.merge({}, Fonts.typeD, {
             marginTop: '15px'
@@ -80,8 +84,6 @@ export default class Banner extends Component {
             paddingRight: '18px'
           }
         };
-      default:
-        return null;
     }
   }
 
@@ -117,23 +119,21 @@ export default class Banner extends Component {
         elements:[{
           type: 'title',
           text: ['PERMISOS'],
-          style: _.merge({}, Fonts.typeC, {
-            paddingBottom: '15px'
-          })
+          style: Fonts.typeC
         }]
       },
       cardD: {
         elements: [{
           type: 'title',
           text: ['TRÁMITES'],
-          style: _.merge({}, Fonts.typeC)
+          style: Fonts.typeC
         }]
       },
       cardE: {
         elements: [{
           type: 'title',
           text: ['SEGUROS'],
-          style: _.merge({}, Fonts.typeC)
+          style: Fonts.typeC
         }]
       }
     };

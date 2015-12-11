@@ -1,8 +1,9 @@
 import React, { Component, PropTypes} from 'react';
 import _ from 'lodash';
+
 import Sprites from '../../../../constants/sprite';
 import Fonts from '../../../../constants/fonts';
-import ButtonB from '../../buttonB';
+import ButtonB from '../../button/buttonB';
 import SimpleCard from '../../card/simpleCard';
 
 
@@ -17,7 +18,7 @@ export default class CardA extends Component {
 
     return (
       <div style={style.integrationSprite} className="img-responsive">
-        <div style={style.contentWrapper}>
+        <div style={style.wrapper}>
           <SimpleCard data={this.props.data} />
           <ButtonB />
         </div>
@@ -28,15 +29,12 @@ export default class CardA extends Component {
   getStyle() {
     return {
       integrationSprite: Sprites.HomeBanner.IntegralService,
-      contentWrapper: {
+      wrapper: {
         width: '100%',
         textAlign: 'center',
         position: 'absolute',
         top: '65%',
-      },
-      title: _.merge({}, Fonts.typeC, {
-        paddingBottom: '15px'
-      })
+      }
     };
   }
 }

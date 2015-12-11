@@ -5,7 +5,7 @@ import Sprites from '../../../constants/sprite';
 
 import Colors from '../../../constants/colors';
 import ButtonA from '../../widgets/buttonA';
-import ButtonB from '../../widgets/buttonB';
+import ButtonB from '../../widgets/button/buttonB';
 
 
 var containerStyle = {
