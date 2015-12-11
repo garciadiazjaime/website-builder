@@ -18,7 +18,8 @@ export default class BigPleck extends Component {
         pleckContainer: {
           backgroundImage: "url('http://127.0.0.1:3000/images/aboutus_bigPleck.png')",
           backgroundPosition: window.innerWidth*.55 + 'px top',
-          backgroundRepeat: 'no-repeat'
+          backgroundRepeat: 'no-repeat',
+          marginBottom: '20px'
         }
       }
     };

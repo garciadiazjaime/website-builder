@@ -4,7 +4,7 @@ import Colors from '../../../constants/colors';
 import Sprites from '../../../sprites/sprite';
 import Fonts from '../../../constants/fonts';
 import Card from '../../widgets/card/simpleCard';
-import Carousel from '../../widgets/carousel';
+import Carousel from '../../widgets/carousel/simpleCarousel';
 
 export default class WhyIB extends Component {
 
@@ -12,69 +12,104 @@ export default class WhyIB extends Component {
     super(props);
     this.state = {
       style: {
-        redBlock: {
-          background: Colors.red,
-          padding: '50px',
-          position: 'relative'
-        },
+        paddingAdjuster: {
+          padding: '0 0 0 10px'
+        }
       }
-    };
+    }
   }
 
 
-  render(){
-    var cards = {
-      Why: [{
-        type: 'subtitle',
-        text: ['¿Por qué InterBrokers?'],
-        style:  _.merge({}, Fonts.typeH, {
-          marginBottom: '20px'
-        })
+  render() {
+    var data = {
+      card1: {
+        wrapper: {
+          style: {
+            background: Colors.red,
+            padding: '50px',
+            position: 'relative',
+            marginBottom: '20px',
+            marginLeft: '-15px',
+            marginRight: '-5px'
+          }
+        },
+        cards: [{
+          type: 'subtitle',
+          text: ['¿Por qué InterBrokers?'],
+          style:  _.merge({}, Fonts.typeH, {
+            marginBottom: '20px'
+          })
+        },
+        {
+          type: 'title',
+          text: ['Entendemos tus necesidades, para ofrecerte una solución integral.'],
+          style: _.merge({}, Fonts.typeJ,{
+            marginBottom: '50px'
+          })
+        },
+        {
+          type: 'description',
+          text: ['Mientras que la mayoría se limita a la correduría de seguros, InterBrokers sobresale por su extensa oferta de productos y servicios. Desde una amplia variedad servicios para la gestión de trámites y permisos, hasta consultoría privada principalmente dirigida al sector transportista con actividad binacional.'],
+          style:  _.merge({}, Fonts.typeI)
+        }]
       },
-      {
-        type: 'title',
-        text: ['Entendemos tus necesidades, para ofrecerte una solución integral.'],
-        style: _.merge({}, Fonts.typeJ,{
-          marginBottom: '50px'
-        })
+      card2: {
+        wrapper: {
+          style: {
+            background: Colors.red,
+            padding: '50px',
+            position: 'relative',
+            marginRight: '-15px',
+            marginLeft: '-5px'
+          }
+        },
+        cards: [{
+            type: 'title',
+            text: ['Nuestra misión: <br />Ayudarte a crecer. '],
+            style: _.merge({}, Fonts.typeJ,{
+              marginBottom: '50px'
+            })
+          },
+          {
+            type: 'description',
+            text: ['En interBrokers creemos en la importancia de la seguridad y tranquilidad de nuestros clientes, es por eso que promovemos una cultura enfocada en la prevención para impulsar su crecimiento, desarrollo y transformación.<br />A través de un servicio cálido, efectivo y personalizado nos ocupamos de entender sus necesidades y ofrecerle una solución integral.<br />Interbrokers ofrece servicios de consultoría, trámites, permisos y seguros, siendo expertos en el sector transportista binacional.'],
+            style:  _.merge({}, Fonts.typeI, {
+            })
+          }]
+        }
+      }
+
+    var carouselData = {
+      meta: {
+        id: 'slide-aboutus'
       },
-      {
-        type: 'description',
-        text: ['Mientras que la mayoría se limita a la correduría de seguros, InterBrokers sobresale por su extensa oferta de productos y servicios. Desde una amplia variedad servicios para la gestión de trámites y permisos, hasta consultoría privada principalmente dirigida al sector transportista con actividad binacional.'],
-        style:  _.merge({}, Fonts.typeI, {
-        })
-      }],
-      Mision: [
-      {
-        type: 'title',
-        text: ['ENuestra misión: <br />Ayudarte a crecer. '],
-        style: _.merge({}, Fonts.typeJ,{
-          marginBottom: '50px'
-        })
-      },
-      {
-        type: 'description',
-        text: ['En interBrokers creemos en la importancia de la seguridad y tranquilidad de nuestros clientes, es por eso que promovemos una cultura enfocada en la prevención para impulsar su crecimiento, desarrollo y transformación.<br />A través de un servicio cálido, efectivo y personalizado nos ocupamos de entender sus necesidades y ofrecerle una solución integral.<br />Interbrokers ofrece servicios de consultoría, trámites, permisos y seguros, siendo expertos en el sector transportista binacional.'],
-        style:  _.merge({}, Fonts.typeI, {
-        })
+      slides: [{
+        wrapper: {
+          style: {
+            backgroundImage: "url('http://127.0.0.1:3000/images/aboutus_carousel_slide1.jpg')",
+            backgroundSize: "cover",
+            height: '300px'
+          }
+        }
       }]
     };
+
     return (
       <div className="container">
         <div className="row row-eq-height">
-          <div className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0" style={this.state.style.redBlock}>
-            <Card data={cards.Why} />
-          </div>
           <div className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0">
-            <Carousel />
+            <Card data={data.card1} />
+          </div>
+          <div className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0" style = {this.state.style.paddingAdjuster}>
+            <Carousel data={carouselData} />
           </div>
         </div>
         <div className="row row-eq-height">
           <div className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0">
             Something
           </div>
-          <div className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0" style={this.state.style.redBlock}>
-             <Card data={cards.Mision} />
+          <div className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0">
+             <Card data={data.card2} />
           </div>
         </div>
       </div>

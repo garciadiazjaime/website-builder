@@ -30,30 +30,34 @@ export default class Banner extends Component {
   }
 
 
-  render(){
-    var cards = {
-      leCard: [{
-        type: 'title',
-        text: ['Expertos en el sector transportista binacional.'],
-        style: _.merge({}, Fonts.typeC, {
-          paddingLeft: '35px',
-          marginBottom: '50px'
-        })
-      },
-      {
-        type: 'description',
-        text: [' Con más de 15 años de experiencia, somos <br />expertos en el sector transportista binacional.'],
-        style: _.merge({}, Fonts.typeD, {
-          paddingLeft: '35px'
-        })
-      }]
+  render() {
+    var data = {
+      cardA:{
+        wrapper: {
+          style: {
+            border: 'margin-left: 35px'
+          }
+        },
+        cards: [{
+          type: 'title',
+          text: ['Expertos en el sector transportista binacional.'],
+          style: _.merge({}, Fonts.typeC, {
+            marginBottom: '50px'
+          })
+        },
+        {
+          type: 'description',
+          text: [' Con más de 15 años de experiencia, somos <br />expertos en el sector transportista binacional.'],
+          style: _.merge({}, Fonts.typeD)
+        }]
+      }  
     };
 
     return (
         <div className="container">
           <div className="row" style={this.state.style.wrapper}>
             <div className="col-xs-10 col-xs-offset-1 col-sm-offset-0" style={this.state.style.vAligner}>
-              <Card data={cards.leCard} />
+              <Card data={data.cardA} />
             </div>
             <YellowFleck />
           </div>

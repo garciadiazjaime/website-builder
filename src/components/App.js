@@ -14,6 +14,7 @@ import Intro from './layout/intro';
 
 // *** Nosotros ***
 import BigPleck from './sections/aboutus/bigPleck';
+import WhyIB from './sections/aboutus/WhyIB';
 import OurTeam from './sections/aboutus/ourTeam';
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
       <Menu />
       <Intro />
       <BigPleck />
+      <WhyIB />
       <OurTeam />
       <Footer />
       <Powered />
