@@ -16,5 +16,20 @@ module.exports = {
     color: 'white',
     fontSize: '25px',
     fontFamily: 'noto-sans-bold'
+  },
+  typeD: {
+    color: 'white',
+    fontSize: '30px',
+    fontFamily: 'noto-sans-bold'
+  },
+  typeE: {
+    color: Colors.yellow,
+    fontSize: '25px',
+    fontWeight: 'bold'
+  },
+  typeF: {
+    color: Colors.white,
+    fontFamily: 'noto-sans-regular',
+    fontSize: '16px'
   }
 }

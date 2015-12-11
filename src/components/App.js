@@ -4,7 +4,7 @@ require("bootstrap-sass!./../../bootstrap-sass.config.js");
 
 import Menu from './layout/menu';
 import Intro from './layout/intro';
-import Banner from './widgets/banner/bannerA';
+import BannerA from './widgets/banner/bannerA';
 import Service from './sections/home/service';
 import Entry from './sections/home/entry';
 import Cover from './sections/home/cover';
@@ -18,7 +18,7 @@ export default function App() {
     <div>
       <Menu />
       <Intro />
-      <Banner />
+      <BannerA />
       <Service />
       <Entry />
       <Cover />
