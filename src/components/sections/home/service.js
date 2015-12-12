@@ -1,101 +1,121 @@
 import React, { Component, PropTypes} from 'react';
+
+import UtilRD from '../../../utils/rd';
 import Sprites from '../../../constants/sprite';
 import Colors from '../../../constants/colors';
+import Fonts from '../../../constants/fonts';
 import ButtonA from '../../widgets/buttonA';
 
-var camionServicios = Sprites.Home.CamionServicios;
-
-var containerStyle = {
-  backgroundColor: Colors.grayLight,
-  marginTop: '50px',
-  height: '520px'
-};
-
-var titleStyle = {
-  fontFamily: 'noto-sans-bold',
-  fontSize: '40px',
-  color: Colors.blueDark,
-  marginBottom: '50px'
-};
-
-var textRed = {
-  color: Colors.red
-};
-
-var introStyle = {
-  fontFamily: 'noto-sans-bold',
-  fontSize: '16px',
-  color: Colors.grayDark
-};
-
-var descriptionStyle = {
-  fontFamily: 'noto-sans-regular',
-  fontSize: '16px',
-  color: Colors.grayDark,
-  paddingBottom: '50px'
-};
-
-var leftWrapperStyle = {
-  paddingLeft: '50px',
-  paddingTop: '130px'
-};
 
 export default class Service extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      containerStyle: containerStyle,
-      leftWrapperStyle: leftWrapperStyle,
-      camionServicios: camionServicios
-    }
+      style: this.getStyle('INIT')
+    };
   }
 
   componentDidMount(){
-    if (document.body.clientWidth > 320 && document.body.clientWidth < 769) {
+    const utilRD = new UtilRD();
+
+    if (utilRD.isTablet(document.body.clientWidth)) {
       this.setState({
-        leftWrapperStyle: _.merge({}, leftWrapperStyle, {
-          paddingLeft: '25px',
-          paddingTop: '70px',
-        }),
-        camionServicios: _.merge({}, camionServicios, {
-          width: '100%'
-        })
+        style: _.merge({}, this.state.style, this.getStyle('TABLET'))
       });
     }
-    else if (document.body.clientWidth < 321) {
+    else if (utilRD.isPhone(document.body.clientWidth)) {
       this.setState({
-        leftWrapperStyle: _.merge({}, leftWrapperStyle, {
-          paddingTop: '25px'
-        })
+        style: _.merge({}, this.state.style, this.getStyle('TABLET'))
       });
     }
   }
 
   render(){
+    var style = this.getStyle();
 
     return (
-      <div className="container" style={this.state.containerStyle}>
+      <div className="container" style={style.containerStyle}>
         <div className="row">
-          <div className="col-md-6 col-sm-5 col-xs-12">
-            <div style={this.state.leftWrapperStyle}>
-              <h2 style={titleStyle}>
-                Servicio <br />Integral <span style={textRed}>360</span>
+          <div className="col-md-6 col-sm-5 col-xs-11">
+            <div style={style.leftWrapperStyle}>
+              <h2 style={style.titleStyle}>
+                Servicio <br />Integral <span style={style.textRed}>360</span>
               </h2>
-              <h3 style={introStyle}>Te ayudamos a llegar más lejos.</h3>
-              <p style={descriptionStyle}>
+              <h3 style={style.introStyle}>Te ayudamos a llegar más lejos.</h3>
+              <p style={style.descriptionStyle}>
                 Entendemos tus necesidades, para ofrecerte <br /> una solución integral.
               </p>
-              <ButtonA text="NUESTROS SERVICIOS" />
+              <ButtonA text="NUESTROS SERVICIOS" type='A' />
             </div>
           </div>
           <div className="col-md-6 col-sm-7 col-xs-12 hidden-xs">
             <div className="row">
-              <div style={this.state.camionServicios}></div>
+              <div style={style.camionServicios}></div>
             </div>
           </div>
         </div>
       </div>
     );
+  }
+
+  getStyle(type) {
+    switch (type) {
+      case 'INIT':
+        return {
+          camionServicios: Sprites.Home.CamionServicios,
+          leftWrapperStyle: {
+            paddingLeft: '35px',
+            paddingTop: '130px'
+          }
+        };
+        break;
+      case 'TABLET':
+        return {
+          leftWrapperStyle: _.merge({}, this.state.style.leftWrapperStyle, {
+            paddingLeft: '25px',
+            paddingTop: '70px',
+          }),
+          camionServicios: _.merge({}, this.state.style.camionServicios, {
+            width: '100%'
+          })
+        };
+      case 'PHONE':
+        return {
+          leftWrapperStyle: _.merge({}, this.state.style.leftWrapperStyle, {
+            paddingTop: '25px'
+          })
+        };
+      default:
+        return {
+          camionServicios: this.state.style.camionServicios,
+          containerStyle: {
+            backgroundColor: Colors.grayLight,
+            marginTop: '50px',
+            height: '520px'
+          },
+          titleStyle: {
+            fontFamily: 'noto-sans-bold',
+            fontSize: '40px',
+            color: Colors.blueDark,
+            marginBottom: '50px'
+          },
+          textRed: {
+            color: Colors.red
+          },
+          introStyle: {
+            fontFamily: 'noto-sans-bold',
+            fontSize: '16px',
+            color: Colors.grayDark
+          },
+          descriptionStyle: {
+            fontFamily: 'noto-sans-regular',
+            fontSize: '16px',
+            color: Colors.grayDark,
+            paddingBottom: '50px'
+          },
+          leftWrapperStyle: this.state.style.leftWrapperStyle
+        };
+    }
   }
 }

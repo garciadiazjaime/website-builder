@@ -1,6 +1,55 @@
 import Colors from './colors';
 
-module.exports = {
+
+
+export class FontA {
+
+  static style = {
+    fontFamily: 'noto-sans-regular'
+  };
+
+  static getVariation(variation) {
+    switch (variation) {
+      case 'headerA':
+        return _.merge({}, this.style, {
+          color: Colors.grayDark,
+          fontSize: '16px'
+        });
+        break;
+      default:
+
+    }
+  }
+};
+
+export class FontABold {
+
+  static style = {
+    fontFamily: 'noto-sans-bold'
+  }
+
+  static getVariation(variation) {
+    switch (variation) {
+      case 'headerA':
+        return _.merge({}, this.style, {
+          color: Colors.grayDark,
+          fontSize: '16px',
+        });
+      case 'menuA':
+        return _.merge({}, this.style, {
+          color: Colors.grayDark,
+          fontSize: '12px',
+          textTransform: 'uppercase'
+        });
+
+      default:
+        return null;
+    }
+  }
+}
+
+
+export default {
   typeA: {
     color: Colors.grayDark,
     fontFamily: 'noto-sans-regular',
@@ -37,4 +86,9 @@ module.exports = {
     fontFamily: 'noto-sans-regular',
     fontSize: '14px'
   },
+  typeH: {
+    color: Colors.blueDark,
+    fontFamily: 'noto-sans-bold',
+    fontSize: '12px'
+  }
 }
