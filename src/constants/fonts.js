@@ -15,9 +15,13 @@ export class FontA {
           color: Colors.grayDark,
           fontSize: '16px'
         });
-        break;
+      case 'IntroA':
+        return _.merge({}, this.style, {
+          color: Colors.blueDark,
+          fontSize: '14px'
+        });
       default:
-
+        return null;
     }
   }
 };

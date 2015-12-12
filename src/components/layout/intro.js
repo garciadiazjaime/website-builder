@@ -2,7 +2,7 @@ import React, { Component, PropTypes} from 'react';
 import _ from 'lodash';
 
 import Sprites from '../../constants/sprite';
-import Fonts from '../../constants/fonts';
+import {FontA} from '../../constants/fonts';
 import Logo from './logo';
 import SimpleCard from '../widgets/card/simpleCard';
 import UtilRD from '../../utils/rd';
@@ -58,16 +58,14 @@ export default class Intro extends Component {
             display: 'inline-block'
           }
         },
-        elements: [
-          {
-            type: 'description',
-            text: ['Te vemos grande'],
-            style: _.merge({}, Fonts.typeG, {
-              display: 'inline-block',
-              marginTop: '10px'
-            })
-          }
-        ]
+        elements: [{
+          type: 'description',
+          text: ['Te vemos grande'],
+          style: _.merge({}, FontA.getVariation('IntroA'), {
+            display: 'inline-block',
+            marginTop: '10px'
+          })
+        }]
       }
     }
   }

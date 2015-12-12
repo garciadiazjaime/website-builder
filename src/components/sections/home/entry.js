@@ -2,7 +2,7 @@ import React, { Component, PropTypes} from 'react';
 import _ from 'lodash';
 import Sprites from '../../../constants/sprite';
 import Colors from '../../../constants/colors';
-import ButtonA from '../../widgets/buttonA';
+import ButtonA from '../../widgets/button/buttonA';
 import ButtonB from '../../widgets/button/buttonB';
 
 var nuevoEntrante = _.merge({}, Sprites.Home.NuevoEntrante, {

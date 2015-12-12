@@ -1,57 +1,34 @@
 import React, { Component, PropTypes} from 'react';
+import _ from 'lodash';
 
-import UtilRD from '../../../utils/rd';
 import Sprites from '../../../constants/sprite';
 import Colors from '../../../constants/colors';
-import Fonts from '../../../constants/fonts';
-import ButtonA from '../../widgets/buttonA';
-
+import {FontA, FontABold} from '../../../constants/fonts';
+import ButtonA from '../../widgets/button/buttonA';
+import CardD from '../../widgets/card/cardD';
+import CardE from '../../widgets/card/cardE';
 
 export default class Service extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      style: this.getStyle('INIT')
-    };
   }
 
-  componentDidMount(){
-    const utilRD = new UtilRD();
-
-    if (utilRD.isTablet(document.body.clientWidth)) {
-      this.setState({
-        style: _.merge({}, this.state.style, this.getStyle('TABLET'))
-      });
-    }
-    else if (utilRD.isPhone(document.body.clientWidth)) {
-      this.setState({
-        style: _.merge({}, this.state.style, this.getStyle('TABLET'))
-      });
-    }
-  }
-
-  render(){
+  render() {
     var style = this.getStyle();
+    var cards = this.getCards();
 
     return (
-      <div className="container" style={style.containerStyle}>
+      <div className="container" style={style.wrapper}>
         <div className="row">
           <div className="col-md-6 col-sm-5 col-xs-11">
-            <div style={style.leftWrapperStyle}>
-              <h2 style={style.titleStyle}>
-                Servicio <br />Integral <span style={style.textRed}>360</span>
-              </h2>
-              <h3 style={style.introStyle}>Te ayudamos a llegar más lejos.</h3>
-              <p style={style.descriptionStyle}>
-                Entendemos tus necesidades, para ofrecerte <br /> una solución integral.
-              </p>
+            <CardD data={cards.cardA}>
               <ButtonA text="NUESTROS SERVICIOS" type='A' />
-            </div>
+            </CardD>
           </div>
           <div className="col-md-6 col-sm-7 col-xs-12 hidden-xs">
             <div className="row">
-              <div style={style.camionServicios}></div>
+              <CardE sprite={Sprites.Home.CamionServicios} />
             </div>
           </div>
         </div>
@@ -59,63 +36,34 @@ export default class Service extends Component {
     );
   }
 
-  getStyle(type) {
-    switch (type) {
-      case 'INIT':
-        return {
-          camionServicios: Sprites.Home.CamionServicios,
-          leftWrapperStyle: {
-            paddingLeft: '35px',
-            paddingTop: '130px'
-          }
-        };
-        break;
-      case 'TABLET':
-        return {
-          leftWrapperStyle: _.merge({}, this.state.style.leftWrapperStyle, {
-            paddingLeft: '25px',
-            paddingTop: '70px',
-          }),
-          camionServicios: _.merge({}, this.state.style.camionServicios, {
-            width: '100%'
-          })
-        };
-      case 'PHONE':
-        return {
-          leftWrapperStyle: _.merge({}, this.state.style.leftWrapperStyle, {
-            paddingTop: '25px'
-          })
-        };
-      default:
-        return {
-          camionServicios: this.state.style.camionServicios,
-          containerStyle: {
-            backgroundColor: Colors.grayLight,
-            marginTop: '50px',
-            height: '520px'
-          },
-          titleStyle: {
-            fontFamily: 'noto-sans-bold',
-            fontSize: '40px',
-            color: Colors.blueDark,
+  getCards() {
+    return {
+      cardA: {
+        wrapper: {
+          style: {
             marginBottom: '50px'
-          },
-          textRed: {
-            color: Colors.red
-          },
-          introStyle: {
-            fontFamily: 'noto-sans-bold',
-            fontSize: '16px',
-            color: Colors.grayDark
-          },
-          descriptionStyle: {
-            fontFamily: 'noto-sans-regular',
-            fontSize: '16px',
-            color: Colors.grayDark,
-            paddingBottom: '50px'
-          },
-          leftWrapperStyle: this.state.style.leftWrapperStyle
-        };
-    }
+          }
+        },
+        elements: [{
+          type: 'subtitle',
+          text: ['Te ayudamos a llegar más lejos.'],
+          style: FontABold.getVariation('headerA')
+        }, {
+          type: 'description',
+          text: ['Entendemos tus necesidades, para ofrecerte <br /> una solución integral.'],
+          style: FontA.getVariation('headerA')
+        }]
+      }
+    };
+  }
+
+  getStyle(type) {
+    return {
+      wrapper: {
+        backgroundColor: Colors.grayLight,
+        marginTop: '50px',
+        height: '520px'
+      }
+    };
   }
 }
