@@ -2,7 +2,7 @@ import React, { Component, PropTypes} from 'react';
 
 import Sprites from '../../../constants/sprite';
 import Colors from '../../../constants/colors';
-import ButtonA from '../../widgets/buttonA';
+import ButtonA from '../../widgets/button/buttonA';
 import ButtonC from '../../widgets/buttonC';
 
 var segurosIBKSpriteStyle = Sprites.Home.SegurosIBK;

@@ -1,6 +1,78 @@
 import Colors from './colors';
 
-module.exports = {
+
+
+export class FontA {
+
+  static style = {
+    fontFamily: 'noto-sans-regular'
+  };
+
+  static getVariation(variation) {
+    switch (variation) {
+      case 'headerA':
+        return _.merge({}, this.style, {
+          color: Colors.grayDark,
+          fontSize: '16px'
+        });
+      case 'introA':
+        return _.merge({}, this.style, {
+          color: Colors.blueDark,
+          fontSize: '14px'
+        });
+      case 'homeA':
+        return _.merge({}, this.style, {
+          color: Colors.white,
+          fontSize: '16px'
+        });
+      default:
+        return null;
+    }
+  }
+};
+
+export class FontABold {
+
+  static style = {
+    fontFamily: 'noto-sans-bold'
+  }
+
+  static getVariation(variation) {
+    switch (variation) {
+      case 'headerA':
+        return _.merge({}, this.style, {
+          color: Colors.grayDark,
+          fontSize: '16px',
+        });
+      case 'menuA':
+        return _.merge({}, this.style, {
+          color: Colors.grayDark,
+          fontSize: '12px',
+          textTransform: 'uppercase'
+        });
+      case 'homeA':
+        return _.merge({}, this.style, {
+          color: Colors.blueDark,
+          fontSize: '35px'
+        });
+      case 'homeB':
+        return _.merge({}, this.style, {
+          color: Colors.white,
+          fontSize: '35px'
+        });
+      case 'buttonA':
+        return _.merge({}, this.style, {
+          color: Colors.blueDark,
+          fontSize: '12px'
+        });
+      default:
+        return null;
+    }
+  }
+}
+
+
+export default {
   typeA: {
     color: Colors.grayDark,
     fontFamily: 'noto-sans-regular',
@@ -31,5 +103,15 @@ module.exports = {
     color: Colors.white,
     fontFamily: 'noto-sans-regular',
     fontSize: '16px'
+  },
+  typeG: {
+    color: Colors.blueDark,
+    fontFamily: 'noto-sans-regular',
+    fontSize: '14px'
+  },
+  typeH: {
+    color: Colors.blueDark,
+    fontFamily: 'noto-sans-bold',
+    fontSize: '12px'
   }
 }

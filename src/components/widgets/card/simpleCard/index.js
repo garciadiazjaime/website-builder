@@ -2,7 +2,7 @@ import React, { Component, PropTypes} from 'react';
 import _ from 'lodash';
 
 
-export default class simpleCard extends Component {
+export default class SimpleCard extends Component {
 
   constructor(props) {
     super(props);
@@ -70,6 +70,6 @@ export default class simpleCard extends Component {
   }
 }
 
-simpleCard.propTypes = {
+SimpleCard.propTypes = {
   data: React.PropTypes.object.isRequired
 };
