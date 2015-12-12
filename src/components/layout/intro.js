@@ -61,7 +61,7 @@ export default class Intro extends Component {
         elements: [{
           type: 'description',
           text: ['Te vemos grande'],
-          style: _.merge({}, FontA.getVariation('IntroA'), {
+          style: _.merge({}, FontA.getVariation('introA'), {
             display: 'inline-block',
             marginTop: '10px'
           })

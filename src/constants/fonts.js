@@ -15,10 +15,15 @@ export class FontA {
           color: Colors.grayDark,
           fontSize: '16px'
         });
-      case 'IntroA':
+      case 'introA':
         return _.merge({}, this.style, {
           color: Colors.blueDark,
           fontSize: '14px'
+        });
+      case 'homeA':
+        return _.merge({}, this.style, {
+          color: Colors.white,
+          fontSize: '16px'
         });
       default:
         return null;
@@ -45,7 +50,21 @@ export class FontABold {
           fontSize: '12px',
           textTransform: 'uppercase'
         });
-
+      case 'homeA':
+        return _.merge({}, this.style, {
+          color: Colors.blueDark,
+          fontSize: '35px'
+        });
+      case 'homeB':
+        return _.merge({}, this.style, {
+          color: Colors.white,
+          fontSize: '35px'
+        });
+      case 'buttonA':
+        return _.merge({}, this.style, {
+          color: Colors.blueDark,
+          fontSize: '12px'
+        });
       default:
         return null;
     }

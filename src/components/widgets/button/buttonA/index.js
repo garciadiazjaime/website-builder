@@ -2,7 +2,7 @@ import React, { Component, PropTypes} from 'react';
 import _ from 'lodash';
 
 import Colors from '../../../../constants/colors';
-import Fonts from '../../../../constants/fonts';
+import {FontABold} from '../../../../constants/fonts';
 
 
 export default class ButtonA extends Component {
@@ -33,7 +33,7 @@ export default class ButtonA extends Component {
     }
 
     return {
-      wrapper: _.merge({}, Fonts.typeH, theme, {
+      wrapper: _.merge({}, FontABold.getVariation('buttonA'), theme, {
         display: 'inline-block',
         borderRadius: '20px',
         padding: '8px 18px'
