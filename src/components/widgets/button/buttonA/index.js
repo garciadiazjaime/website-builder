@@ -49,3 +49,8 @@ export default class ButtonA extends Component {
     };
   }
 }
+
+ButtonA.propTypes = {
+  text: React.PropTypes.string.isRequired,
+  type: React.PropTypes.string.isRequired
+}
