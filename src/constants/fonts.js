@@ -39,16 +39,36 @@ export class FontABold {
 
   static getVariation(variation) {
     switch (variation) {
-      case 'headerA':
+      case 'buttonA':
         return _.merge({}, this.style, {
-          color: Colors.grayDark,
-          fontSize: '16px',
+          color: Colors.blueDark,
+          fontSize: '12px'
+        });
+      case 'buttonC':
+        return _.merge({}, this.style, {
+          color: Colors.white,
+          fontSize: '12px'
         });
       case 'menuA':
         return _.merge({}, this.style, {
           color: Colors.grayDark,
           fontSize: '12px',
           textTransform: 'uppercase'
+        });
+      case 'homeD':
+        return _.merge({}, this.style, {
+          color: Colors.white,
+          fontSize: '15px',
+        });
+      case 'headerA':
+        return _.merge({}, this.style, {
+          color: Colors.grayDark,
+          fontSize: '16px',
+        });
+      case 'homeC':
+        return _.merge({}, this.style, {
+          color: Colors.white,
+          fontSize: '25px',
         });
       case 'homeA':
         return _.merge({}, this.style, {
@@ -59,11 +79,6 @@ export class FontABold {
         return _.merge({}, this.style, {
           color: Colors.white,
           fontSize: '35px'
-        });
-      case 'buttonA':
-        return _.merge({}, this.style, {
-          color: Colors.blueDark,
-          fontSize: '12px'
         });
       default:
         return null;

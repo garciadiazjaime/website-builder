@@ -1,82 +1,50 @@
 import React, { Component, PropTypes} from 'react';
 import _ from 'lodash';
 
+import {FontA, FontABold} from '../../../constants/fonts';
 import Sprites from '../../../constants/sprite';
 import Colors from '../../../constants/colors';
 import ButtonA from '../../widgets/button/buttonA';
-import ButtonC from '../../widgets/buttonC';
+import ButtonC from '../../widgets/button/buttonC';
+import CardJ from '../../widgets/card/cardJ';
+import CardK from '../../widgets/card/cardK';
 
 
 export default class Products extends Component {
 
   render(){
     var style = this.getStyle();
+    var cards = this.getCards();
 
     return (
       <div style={style.containerWrapperStyle}>
         <div className="container">
           <div className="row">
             <div className="col-md-6 col-sm-6 col-xs-12">
-              <div style={style.leftWrapperStyle}>
-                <h2 style={style.titleStyle}>
-                  Siente la libertad de <br />
-                  Vivir tranquilo.
-                </h2>
-                <br />
-                <p style={style.subtitleStyle}>Seguros</p>
-                <div className="row">
-                  <div className="col-md-11">
-                    <hr style={style.breakStyle} />
-                  </div>
+              <CardJ data={cards.cardA}>
+                <div className="col-md-2 col-sm-4 col-xs-4">
+                  <ButtonC text="AUTOS" sprite={style.segurosCarros} />
                 </div>
-                <div>
-                  <div className="row">
-                    <div className="col-md-2 col-sm-4 col-xs-4">
-                      <ButtonC text="AUTOS" type="AUTOS" />
-                    </div>
-                    <div className="col-md-2 col-sm-4 col-xs-4">
-                      <ButtonC text="MOTOS" type="MOTOS" />
-                    </div>
-                    <div className="col-md-2 col-sm-4 col-xs-4">
-                      <ButtonC text="CASA" type="CASA" />
-                    </div>
-                    <div className="col-md-2 col-sm-4 col-xs-4">
-                      <ButtonC text="EMPRESAS" type="EMPRESAS" />
-                    </div>
-                    <div className="col-md-2 col-sm-4 col-xs-4">
-                      <ButtonC text="PERSONAS" type="PERSONAS" />
-                    </div>
-                  </div>
+                <div className="col-md-2 col-sm-4 col-xs-4">
+                  <ButtonC text="MOTOS" sprite={style.segurosMotos} />
                 </div>
-              </div>
+                <div className="col-md-2 col-sm-4 col-xs-4">
+                  <ButtonC text="CASA" sprite={style.segurosCasas} />
+                </div>
+                <div className="col-md-2 col-sm-4 col-xs-4">
+                  <ButtonC text="EMPRESAS" sprite={style.segurosEmpresas} />
+                </div>
+                <div className="col-md-2 col-sm-4 col-xs-4">
+                  <ButtonC text="PERSONAS" sprite={style.segurosPersonas} />
+                </div>
+              </CardJ>
             </div>
             <div className="col-md-6 col-sm-6 col-xs-12">
-              <div style={style.rightTopWrapperStyle}>
-                <div className="row">
-                  <div className="col-md-5 col-sm-5">
-                    <div style={style.segurosIBKSpriteStyle}></div>
-                    <p style={style.ibkSloganStyle}>agente de seguros</p>
-                  </div>
-                  <div className="col-md-7 col-sm-5">
-                    <div style={style.buttonWrapper}>
-                      <ButtonA text="CONÓCENOS" type="B" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-md-12 col-sm-12">
-                  <div style={style.rightBottomWrapperStyle}>
-                    <p style={style.descriptionStyle}>
-                      A través de nuestra empresa hermana <b style={style.boldStyle}>IBK <br className="hidden-sm" />
-                      Agentes de Seguros</b>, te ofrecemos un amplio <br className="hidden-sm" />
-                      portafolio en seguros personales, autos, casa, <br className="hidden-sm" />
-                      salud, entre otros. Visita nuestro sitio y conoce <br className="hidden-sm" />
-                      como podemos ayudarte.
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <CardK data={cards.cardB}
+                sprite={style.segurosIBKSpriteStyle}
+                slogan="agente de seguros">
+                <ButtonA text="CONÓCENOS" type="B" />
+              </CardK>
             </div>
           </div>
         </div>
@@ -84,52 +52,48 @@ export default class Products extends Component {
     );
   }
 
+  getCards() {
+    return {
+      cardA: {
+        elements: [{
+          type: 'title',
+          text: ['Siente la libertad de <br />Vivir tranquilo.'],
+          style: FontABold.getVariation('homeC'),
+        }, {
+          type: 'description',
+          text: ['Seguros'],
+          style: _.merge({}, FontABold.getVariation('homeD'), {
+            paddingTop: '20px'
+          })
+        }]
+      },
+      cardB: {
+        wrapper: {
+          style: {
+            marginTop: '30px'
+          }
+        },
+        elements: [{
+          type: 'description',
+          text: ['A través de nuestra empresa hermana <b>IBK <br class="hidden-sm" />Agentes de Seguros</b>, te ofrecemos un amplio <br class="hidden-sm" />portafolio en seguros personales, autos, casa, <br class="hidden-sm" />salud, entre otros. Visita nuestro sitio y conoce <br class="hidden-sm" />como podemos ayudarte.'],
+          style: FontA.getVariation('homeA')
+        }]
+      }
+    }
+  }
+
   getStyle() {
     return {
       segurosIBKSpriteStyle: Sprites.Home.SegurosIBK,
+      segurosCarros: Sprites.Seguros.SegurosCarros,
+      segurosMotos: Sprites.Seguros.SegurosMotos,
+      segurosCasas: Sprites.Seguros.SegurosCasas,
+      segurosEmpresas: Sprites.Seguros.SegurosEmpresas,
+      segurosPersonas: Sprites.Seguros.SegurosPersonas,
       containerWrapperStyle: {
         backgroundColor: Colors.purple,
         marginTop: '50px',
         paddingBottom: '70px'
-      },
-      leftWrapperStyle: {
-        margin: '70px 50px'
-      },
-      rightTopWrapperStyle: {
-        margin: '70px 0 0 32px'
-      },
-      rightBottomWrapperStyle: {
-        margin: '30px 0 0 35px'
-      },
-      titleStyle: {
-        fontFamily: 'noto-sans-bold',
-        fontSize: '25px',
-        color: 'white',
-      },
-      subtitleStyle: {
-        fontFamily: 'noto-sans-bold',
-        fontSize: '15px',
-        color: 'white'
-      },
-      descriptionStyle: {
-        fontFamily: 'noto-sans-regular',
-        fontSize: '16px',
-        color: 'white'
-      },
-      boldStyle: {
-        fontFamily: 'noto-sans-bold',
-      },
-      buttonWrapper: {
-        marginTop: '45px'
-      },
-      breakStyle: {
-        margin: '0px 0 30px'
-      },
-      ibkSloganStyle: {
-        color: 'white',
-        fontSize: '14px',
-        fontWeight: '100',
-        marginTop: '15px'
       }
     }
   }
