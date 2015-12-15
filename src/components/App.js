@@ -3,6 +3,7 @@ import React from 'react';
 require("bootstrap-sass!./../../bootstrap-sass.config.js");
 
 import Menu from './layout/menu';
+
 import Powered from './layout/powered';
 import Footer from './layout/footer';
 import Intro from './layout/intro';

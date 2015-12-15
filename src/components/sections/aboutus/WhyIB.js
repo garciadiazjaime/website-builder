@@ -21,7 +21,48 @@ export default class WhyIB extends Component {
 
 
   render() {
-    var data = {
+
+    var cards = this.getCards();
+    
+    var carouselData = {
+      meta: {
+        id: 'slide-aboutus'
+      },
+      slides: [{
+        wrapper: {
+          style: {
+            backgroundImage: "url('http://127.0.0.1:3000/images/aboutus_carousel_slide1.jpg')",
+            backgroundSize: "cover",
+            height: '300px'
+          }
+        }
+      }]
+    };
+
+    return (
+      <div className="container">
+        <div className="row row-eq-height">
+          <div className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0">
+            <Card data={cards.card1} />
+          </div>
+          <div className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0" style = {this.state.style.paddingAdjuster}>
+            <Carousel data={carouselData} />
+          </div>
+        </div>
+        <div className="row row-eq-height">
+          <div className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0">
+            Something
+          </div>
+          <div className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0">
+             <Card data={cards.card2} />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  getCards() {
+    return {
       card1: {
         wrapper: {
           style: {
@@ -33,7 +74,7 @@ export default class WhyIB extends Component {
             marginRight: '-5px'
           }
         },
-        cards: [{
+        elements: [{
           type: 'subtitle',
           text: ['¿Por qué InterBrokers?'],
           style:  _.merge({}, Fonts.typeH, {
@@ -63,7 +104,7 @@ export default class WhyIB extends Component {
             marginLeft: '-5px'
           }
         },
-        cards: [{
+        elements: [{
             type: 'title',
             text: ['Nuestra misión: <br />Ayudarte a crecer. '],
             style: _.merge({}, Fonts.typeJ,{
@@ -78,42 +119,6 @@ export default class WhyIB extends Component {
           }]
         }
       }
-
-    var carouselData = {
-      meta: {
-        id: 'slide-aboutus'
-      },
-      slides: [{
-        wrapper: {
-          style: {
-            backgroundImage: "url('http://127.0.0.1:3000/images/aboutus_carousel_slide1.jpg')",
-            backgroundSize: "cover",
-            height: '300px'
-          }
-        }
-      }]
-    };
-
-    return (
-      <div className="container">
-        <div className="row row-eq-height">
-          <div className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0">
-            <Card data={data.card1} />
-          </div>
-          <div className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0" style = {this.state.style.paddingAdjuster}>
-            <Carousel data={carouselData} />
-          </div>
-        </div>
-        <div className="row row-eq-height">
-          <div className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0">
-            Something
-          </div>
-          <div className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0">
-             <Card data={data.card2} />
-          </div>
-        </div>
-      </div>
-    );
   }
 }
 

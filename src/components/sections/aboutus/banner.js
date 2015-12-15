@@ -31,14 +31,29 @@ export default class Banner extends Component {
 
 
   render() {
-    var data = {
-      cardA:{
+    var cards = this.getCards();
+    
+    return (
+        <div className="container">
+          <div className="row" style={this.state.style.wrapper}>
+            <div className="col-xs-10 col-xs-offset-1 col-sm-offset-0" style={this.state.style.vAligner}>
+              <Card data={cards.cardA} />
+            </div>
+            <YellowFleck />
+          </div>
+        </div>
+    );
+  }
+
+  getCards() {
+    return {
+      cardA: {
         wrapper: {
           style: {
-            border: 'margin-left: 35px'
+            marginLeft: '35px'
           }
         },
-        cards: [{
+        elements: [{
           type: 'title',
           text: ['Expertos en el sector transportista binacional.'],
           style: _.merge({}, Fonts.typeC, {
@@ -52,16 +67,5 @@ export default class Banner extends Component {
         }]
       }  
     };
-
-    return (
-        <div className="container">
-          <div className="row" style={this.state.style.wrapper}>
-            <div className="col-xs-10 col-xs-offset-1 col-sm-offset-0" style={this.state.style.vAligner}>
-              <Card data={data.cardA} />
-            </div>
-            <YellowFleck />
-          </div>
-        </div>
-    );
   }
 }

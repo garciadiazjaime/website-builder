@@ -24,14 +24,28 @@ export default class Mission extends Component {
 
   
   render(){
-    var data = {
+    var cards = this.getCards();
+    return (
+      <div className="container">
+        <div className="row" style={this.state.style.wrapper}>
+          <div className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
+            <Card data={cards.cardA} />
+          </div>
+          <YellowFleck />
+        </div>
+      </div>
+    );
+  }
+
+  getCards() {
+    return {
       cardA: {
         wrapper: {
           style: {
             marginLeft: '35px'
           }
         },
-        cards: [{
+        elements: [{
             type: 'title',
             text: ['Nuestra Misión'],
             style:  _.merge({}, Fonts.typeG, {
@@ -52,16 +66,5 @@ export default class Mission extends Component {
         }]
       }
     };
-
-    return (
-      <div className="container">
-        <div className="row" style={this.state.style.wrapper}>
-          <div className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
-            <Card data={data.cardA} />
-          </div>
-          <YellowFleck />
-        </div>
-      </div>
-    );
   }
 }

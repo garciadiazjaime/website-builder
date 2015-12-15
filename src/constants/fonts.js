@@ -26,6 +26,7 @@ module.exports = {
     color: Colors.blueDark,
     fontFamily: 'noto-sans-bold',
     fontSize: '25px',
+
     textTransform: 'uppercase'
   },
   typeF: {
@@ -52,5 +53,21 @@ module.exports = {
     color: '#fff',
     fontFamily: 'noto-sans-bold',
     fontSize: '35px'
+  },
+  typeK: {
+    color: 'white',
+    fontSize: '30px',
+    fontFamily: 'noto-sans-bold'
+  },
+  typeL: {
+    color: Colors.yellow,
+    fontSize: '25px',
+    fontWeight: 'bold'
+  },
+  typeM: {
+    color: Colors.white,
+    fontFamily: 'noto-sans-regular',
+    fontSize: '16px'
+
   }
 }
