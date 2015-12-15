@@ -28,6 +28,10 @@ ul {
   padding: 0px;
 }
 
+b{
+  font-family: noto-sans-bold;
+}
+
 /* RESET BOOTSTRAP STYLES */
 
 .navbar-default {
