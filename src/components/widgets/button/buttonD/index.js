@@ -1,36 +1,24 @@
 import React, { Component, PropTypes} from 'react';
 import _ from 'lodash';
-import Colors from '../../constants/colors';
-import Sprites from '../../constants/sprite';
+
+import Colors from '../../../../constants/colors';
+import Sprites from '../../../../constants/sprite';
 
 
 export default class ButtonD extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      style: {
-        title: {
-          fontFamily: 'noto-sans-bold',
-          fontSize: '16px',
-          color: 'white'
-        },
-        iconWrapper: {
-          top: '5px',
-          left: '20px',
-          position: 'relative'
-        }
-      }
-    }
   }
 
   render(){
+    var style = this.getStyle();
     var titleEl = this.getTitle(this.props.type);
     var spriteStyle = this.getSprite(this.props.sprite);
 
     return (<a>
-      <span style={this.state.style.title}>{titleEl}</span>
-      <span style={this.state.style.iconWrapper}>
+      <span style={style.title}>{titleEl}</span>
+      <span style={style.iconWrapper}>
         <i style={spriteStyle}></i>
       </span>
     </a>);
@@ -57,5 +45,20 @@ export default class ButtonD extends Component {
           display: 'inline-block'
         });
     }
+  }
+
+  getStyle() {
+    return {
+      title: {
+        fontFamily: 'noto-sans-bold',
+        fontSize: '16px',
+        color: 'white'
+      },
+      iconWrapper: {
+        top: '5px',
+        left: '20px',
+        position: 'relative'
+      }
+    };
   }
 }

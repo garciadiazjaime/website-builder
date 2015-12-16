@@ -3,7 +3,7 @@ import React, { Component, PropTypes} from 'react';
 import Logo from '../logo';
 import Colors from '../../../constants/colors';
 import Sprites from '../../../constants/sprite';
-import ButtonD from '../../widgets/ButtonD';
+import ButtonD from '../../widgets/button/ButtonD';
 import Location from './location';
 import CallUs from './callUs';
 
