@@ -132,84 +132,161 @@ module.exports = {
         }
     },
     "Seguros": {
-        "SegurosCarros": {
+        "SegurosMxServicio": {
+            "backgroundPosition": "-115px -0px",
+            "width": "142px",
+            "height": "81px",
+            "backgroundImage": "url('../images/sprite-seguros.png')",
+            "backgroundSize": "257px 247px"
+        },
+        "SegurosServicio": {
             "backgroundPosition": "-0px -0px",
+            "width": "115px",
+            "height": "115px",
+            "backgroundImage": "url('../images/sprite-seguros.png')",
+            "backgroundSize": "257px 247px"
+        },
+        "SegurosUsaServicio": {
+            "backgroundPosition": "-0px -115px",
+            "width": "142px",
+            "height": "81px",
+            "backgroundImage": "url('../images/sprite-seguros.png')",
+            "backgroundSize": "257px 247px"
+        },
+        "SegurosCarros": {
+            "backgroundPosition": "-142px -115px",
             "width": "51px",
             "height": "51px",
             "backgroundImage": "url('../images/sprite-seguros.png')",
-            "backgroundSize": "153px 102px"
+            "backgroundSize": "257px 247px"
         },
         "SegurosCasas": {
-            "backgroundPosition": "-51px -0px",
+            "backgroundPosition": "-193px -115px",
             "width": "51px",
             "height": "51px",
             "backgroundImage": "url('../images/sprite-seguros.png')",
-            "backgroundSize": "153px 102px"
+            "backgroundSize": "257px 247px"
         },
         "SegurosEmpresas": {
-            "backgroundPosition": "-0px -51px",
+            "backgroundPosition": "-0px -196px",
             "width": "51px",
             "height": "51px",
             "backgroundImage": "url('../images/sprite-seguros.png')",
-            "backgroundSize": "153px 102px"
+            "backgroundSize": "257px 247px"
         },
         "SegurosMotos": {
-            "backgroundPosition": "-51px -51px",
+            "backgroundPosition": "-51px -196px",
             "width": "51px",
             "height": "51px",
             "backgroundImage": "url('../images/sprite-seguros.png')",
-            "backgroundSize": "153px 102px"
+            "backgroundSize": "257px 247px"
         },
         "SegurosPersonas": {
-            "backgroundPosition": "-102px -0px",
+            "backgroundPosition": "-102px -196px",
             "width": "51px",
             "height": "51px",
             "backgroundImage": "url('../images/sprite-seguros.png')",
-            "backgroundSize": "153px 102px"
+            "backgroundSize": "257px 247px"
         }
     },
     "Services": {
         "Bullet": {
-            "backgroundPosition": "-115px -73px",
+            "backgroundPosition": "-434px -146px",
             "width": "12px",
             "height": "12px",
             "backgroundImage": "url('../images/sprite-services.png')",
-            "backgroundSize": "262px 240px"
+            "backgroundSize": "519px 303px"
+        },
+        "ConsultoriaMxusa": {
+            "backgroundPosition": "-372px -146px",
+            "width": "62px",
+            "height": "89px",
+            "backgroundImage": "url('../images/sprite-services.png')",
+            "backgroundSize": "519px 303px"
+        },
+        "Consultoria": {
+            "backgroundPosition": "-0px -115px",
+            "width": "115px",
+            "height": "115px",
+            "backgroundImage": "url('../images/sprite-services.png')",
+            "backgroundSize": "519px 303px"
+        },
+        "PermisosEntrante": {
+            "backgroundPosition": "-372px -0px",
+            "width": "147px",
+            "height": "73px",
+            "backgroundImage": "url('../images/sprite-services.png')",
+            "backgroundSize": "519px 303px"
+        },
+        "PermisosUsa": {
+            "backgroundPosition": "-0px -230px",
+            "width": "147px",
+            "height": "73px",
+            "backgroundImage": "url('../images/sprite-services.png')",
+            "backgroundSize": "519px 303px"
+        },
+        "Permisos": {
+            "backgroundPosition": "-115px -0px",
+            "width": "115px",
+            "height": "115px",
+            "backgroundImage": "url('../images/sprite-services.png')",
+            "backgroundSize": "519px 303px"
         },
         "PlacasMx": {
-            "backgroundPosition": "-147px -115px",
+            "backgroundPosition": "-230px -162px",
             "width": "91px",
             "height": "52px",
             "backgroundImage": "url('../images/sprite-services.png')",
-            "backgroundSize": "262px 240px"
+            "backgroundSize": "519px 303px"
         },
         "PlacasUsa": {
-            "backgroundPosition": "-0px -188px",
+            "backgroundPosition": "-372px -235px",
             "width": "91px",
             "height": "52px",
             "backgroundImage": "url('../images/sprite-services.png')",
-            "backgroundSize": "262px 240px"
+            "backgroundSize": "519px 303px"
+        },
+        "SegurosMx": {
+            "backgroundPosition": "-230px -0px",
+            "width": "142px",
+            "height": "81px",
+            "backgroundImage": "url('../images/sprite-services.png')",
+            "backgroundSize": "519px 303px"
+        },
+        "SegurosUsa": {
+            "backgroundPosition": "-230px -81px",
+            "width": "142px",
+            "height": "81px",
+            "backgroundImage": "url('../images/sprite-services.png')",
+            "backgroundSize": "519px 303px"
+        },
+        "Seguros": {
+            "backgroundPosition": "-115px -115px",
+            "width": "115px",
+            "height": "115px",
+            "backgroundImage": "url('../images/sprite-services.png')",
+            "backgroundSize": "519px 303px"
         },
         "TramitesMx": {
-            "backgroundPosition": "-115px -0px",
+            "backgroundPosition": "-372px -73px",
             "width": "147px",
             "height": "73px",
             "backgroundImage": "url('../images/sprite-services.png')",
-            "backgroundSize": "262px 240px"
+            "backgroundSize": "519px 303px"
         },
         "TramitesUsa": {
-            "backgroundPosition": "-0px -115px",
+            "backgroundPosition": "-147px -230px",
             "width": "147px",
             "height": "73px",
             "backgroundImage": "url('../images/sprite-services.png')",
-            "backgroundSize": "262px 240px"
+            "backgroundSize": "519px 303px"
         },
         "Tramites": {
             "backgroundPosition": "-0px -0px",
             "width": "115px",
             "height": "115px",
             "backgroundImage": "url('../images/sprite-services.png')",
-            "backgroundSize": "262px 240px"
+            "backgroundSize": "519px 303px"
         }
     }
 }

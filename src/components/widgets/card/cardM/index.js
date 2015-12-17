@@ -28,7 +28,7 @@ export default class CardM extends Component {
 
         <div className="row">
           <div className="col-md-offset-3 col-md-12 col-sm-12">
-            <h1 style={style.title}>{this.props.title}</h1>
+            <h1 style={style.title} dangerouslySetInnerHTML={this.sanitize(this.props.title)}></h1>
             {
               this.props.subtitle ?
               <h2 style={style.subtitle}>{this.props.subtitle}</h2> : null
@@ -54,6 +54,12 @@ export default class CardM extends Component {
         marginTop: '20px'
       }
     }
+  }
+
+  sanitize(value) {
+    return {
+      __html: value
+    };
   }
 }
 

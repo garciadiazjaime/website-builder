@@ -84,7 +84,7 @@ export default class Services extends Component {
 
         return (<div key={index}>
             <div className="row">
-              <CardL title={service.title} type={service.type} sprite={Sprites.Services.Tramites} />
+              <CardL title={service.title} type={service.type} sprite={service.sprite} />
             </div>
             {arealEl}
           </div>
