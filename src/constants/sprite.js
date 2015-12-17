@@ -167,5 +167,49 @@ module.exports = {
             "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-seguros.png')",
             "backgroundSize": "153px 102px"
         }
+    },
+    "Services": {
+        "Bullet": {
+            "backgroundPosition": "-115px -73px",
+            "width": "12px",
+            "height": "12px",
+            "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-services.png')",
+            "backgroundSize": "262px 240px"
+        },
+        "PlacasMx": {
+            "backgroundPosition": "-147px -115px",
+            "width": "91px",
+            "height": "52px",
+            "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-services.png')",
+            "backgroundSize": "262px 240px"
+        },
+        "PlacasUsa": {
+            "backgroundPosition": "-0px -188px",
+            "width": "91px",
+            "height": "52px",
+            "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-services.png')",
+            "backgroundSize": "262px 240px"
+        },
+        "TramitesMx": {
+            "backgroundPosition": "-115px -0px",
+            "width": "147px",
+            "height": "73px",
+            "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-services.png')",
+            "backgroundSize": "262px 240px"
+        },
+        "TramitesUsa": {
+            "backgroundPosition": "-0px -115px",
+            "width": "147px",
+            "height": "73px",
+            "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-services.png')",
+            "backgroundSize": "262px 240px"
+        },
+        "Tramites": {
+            "backgroundPosition": "-0px -0px",
+            "width": "115px",
+            "height": "115px",
+            "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-services.png')",
+            "backgroundSize": "262px 240px"
+        }
     }
 }
