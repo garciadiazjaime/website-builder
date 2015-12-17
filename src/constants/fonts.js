@@ -95,6 +95,11 @@ export class FontABold {
           color: Colors.grayDark,
           fontSize: '35px'
         });
+      case 'servicesD':
+        return _.merge({}, this.style, {
+          color: Colors.white,
+          fontSize: '50px',
+        });
       default:
         return null;
     }

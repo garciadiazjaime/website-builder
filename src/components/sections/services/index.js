@@ -5,8 +5,11 @@ import CardL from '../../widgets/card/cardL';
 import CardM from '../../widgets/card/cardM';
 import CardN from '../../widgets/card/cardN';
 
+import BannerB from '../../widgets/banner/bannerB';
+
 
 // import Logo from '../logo';
+import {FontA, FontABold} from '../../../constants/fonts';
 import Colors from '../../../constants/colors';
 import Sprites from '../../../constants/sprite';
 import ButtonD from '../../widgets/button/ButtonD';
@@ -51,11 +54,14 @@ export default class Services extends Component {
 
     // var serviciosEL = this.getServiciosItems();
     var servicesEl = this.renderServices(this.props.data);
+    var cards = this.getCards();
 
     return (
       <div className="container">
 
-          {servicesEl}
+        <BannerB data={cards.cardA} />
+
+        {servicesEl}
 
       </div>
     );
@@ -90,6 +96,40 @@ export default class Services extends Component {
           </div>
         );
       }, this);
+    }
+  }
+
+  getCards() {
+    return {
+      cardA: {
+        wrapper: {
+          style: {
+            backgroundColor: Colors.red,
+            paddingLeft: '50px',
+            minHeight: '400px'
+          }
+        },
+        elements: [{
+          type: 'title',
+          text: ['SERVICIOS'],
+          style: _.merge({}, FontABold.getVariation('homeC'), {
+            paddingTop: '45px',
+            marginTop: '0'
+          })
+        }, {
+          type: 'subtitle',
+          text: ['Servicios integrales a <br /> ambos lados de la frontera.'],
+          style: _.merge({}, FontABold.getVariation('servicesD'), {
+            paddingTop: '20px'
+          })
+        }, {
+          type: 'description',
+          text: ['Todo lo que neceitas para operar tu emprsa transportista en <br />Estados Unidos y México.'],
+          style: _.merge({}, FontA.getVariation('homeA'), {
+            paddingTop: '30px'
+          })
+        }]
+      }
     }
   }
 }

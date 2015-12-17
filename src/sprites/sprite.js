@@ -1,67 +1,74 @@
 module.exports = {
     "General": {
         "Agent": {
-            "backgroundPosition": "-106px -94px",
+            "backgroundPosition": "-462px -47px",
             "width": "27px",
             "height": "18px",
             "backgroundImage": "url('../images/sprite-general.png')",
-            "backgroundSize": "300px 174px"
+            "backgroundSize": "638px 322px"
         },
         "ArrowBigYellow": {
-            "backgroundPosition": "-0px -94px",
+            "backgroundPosition": "-356px -47px",
             "width": "42px",
             "height": "42px",
             "backgroundImage": "url('../images/sprite-general.png')",
-            "backgroundSize": "300px 174px"
+            "backgroundSize": "638px 322px"
         },
         "ArrowSmallYellow": {
-            "backgroundPosition": "-282px -64px",
+            "backgroundPosition": "-506px -47px",
             "width": "10px",
             "height": "10px",
             "backgroundImage": "url('../images/sprite-general.png')",
-            "backgroundSize": "300px 174px"
+            "backgroundSize": "638px 322px"
+        },
+        "BannerLines": {
+            "backgroundPosition": "-0px -0px",
+            "width": "356px",
+            "height": "275px",
+            "backgroundImage": "url('../images/sprite-general.png')",
+            "backgroundSize": "638px 322px"
         },
         "CheckRed": {
-            "backgroundPosition": "-282px -47px",
+            "backgroundPosition": "-489px -47px",
             "width": "17px",
             "height": "17px",
             "backgroundImage": "url('../images/sprite-general.png')",
-            "backgroundSize": "300px 174px"
+            "backgroundSize": "638px 322px"
         },
         "Facebook": {
-            "backgroundPosition": "-42px -94px",
+            "backgroundPosition": "-398px -47px",
             "width": "32px",
             "height": "32px",
             "backgroundImage": "url('../images/sprite-general.png')",
-            "backgroundSize": "300px 174px"
+            "backgroundSize": "638px 322px"
         },
         "Location": {
-            "backgroundPosition": "-0px -136px",
+            "backgroundPosition": "-356px -89px",
             "width": "23px",
             "height": "38px",
             "backgroundImage": "url('../images/sprite-general.png')",
-            "backgroundSize": "300px 174px"
+            "backgroundSize": "638px 322px"
         },
         "LogoAnti": {
-            "backgroundPosition": "-0px -0px",
+            "backgroundPosition": "-0px -275px",
             "width": "300px",
             "height": "47px",
             "backgroundImage": "url('../images/sprite-general.png')",
-            "backgroundSize": "300px 174px"
+            "backgroundSize": "638px 322px"
         },
         "Logo": {
-            "backgroundPosition": "-0px -47px",
+            "backgroundPosition": "-356px -0px",
             "width": "282px",
             "height": "47px",
             "backgroundImage": "url('../images/sprite-general.png')",
-            "backgroundSize": "300px 174px"
+            "backgroundSize": "638px 322px"
         },
         "Office": {
-            "backgroundPosition": "-74px -94px",
+            "backgroundPosition": "-430px -47px",
             "width": "32px",
             "height": "32px",
             "backgroundImage": "url('../images/sprite-general.png')",
-            "backgroundSize": "300px 174px"
+            "backgroundSize": "638px 322px"
         }
     },
     "Home": {
