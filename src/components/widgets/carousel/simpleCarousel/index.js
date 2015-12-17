@@ -1,7 +1,7 @@
 import React, { Component, PropTypes} from 'react';
 
 import Colors from '../../../../constants/colors';
-import Sprites from '../../../../sprites/sprite';
+import Sprites from '../../../../constants/sprite';
 import Fonts from '../../../../constants/fonts';
 import Card from '../../card/simpleCard';
 
@@ -15,7 +15,8 @@ export default class SimpleCarousel extends Component {
 
   render(){
     var slidesEl = this.getSlides(this.props.data.slides);
-    var indicatorsEl = this.getIndicators(this.props.data.slides, this.props.data.meta.id);
+    var controls = this.getControls(this.props.data.meta, this.props.data.meta.id);
+    var indicatorsEl = this.getIndicators(this.props.data.slides, this.props.data.meta.id, this.props.data.meta.indicators);
     var id = this.props.data.meta.id;
     return (
       <div id={id} className="carousel slide" data-ride="carousel">
@@ -25,14 +26,7 @@ export default class SimpleCarousel extends Component {
         <div className="carousel-inner" role="listbox">
           {slidesEl}
         </div>
-        <a className="left carousel-control" href={"#"+id} role="button" data-slide="prev">
-          <span className="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span className="sr-only">Previous</span>
-        </a>
-        <a className="right carousel-control" href={"#"+id} role="button" data-slide="next">
-          <span className="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span className="sr-only">Next</span>
-        </a>
+        {controls}
       </div>
     );
   }
@@ -48,11 +42,11 @@ export default class SimpleCarousel extends Component {
     return null;
   }
 
-  getIndicators(slides, carouselID) {
+  getIndicators(slides, carouselID, indicatorStyle) {
     if (_.isArray(slides) && slides.length) {
       return slides.map(function(slide, index) {
         var activeState = this.getActiveState(index);
-        return (<li data-target={carouselID} data-slide-to={index} key={index} className={activeState}></li>);
+        return (<li data-target={carouselID} data-slide-to={index} key={index} className={activeState} style={indicatorStyle}></li>);
       },this);
     }
     return null;
@@ -65,6 +59,33 @@ export default class SimpleCarousel extends Component {
     return null;
   }
 
+  getControls(meta, carouselID) {
+    var ArrowStyle = {
+      leftArrow: _.merge({}, meta.arrowLeft,{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translateY(-50%) translateX(-50%)'
+        }),
+      rightArrow: _.merge({}, meta.arrowRight,{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translateY(-50%) translateX(-50%)'
+        })
+    }
+    return (<div>
+        <a className="left carousel-control" href={"#"+carouselID} role="button" data-slide="prev" style={meta.style}>
+          <div style= {ArrowStyle.leftArrow} aria-hidden="true"></div>
+          <span className="sr-only">Previous</span>
+        </a>
+        <a className="right carousel-control" href={"#"+carouselID} role="button" data-slide="next" style={meta.style}>
+          <div style= {ArrowStyle.rightArrow} aria-hidden="true"></div>
+          <span className="sr-only">Next</span>
+        </a>
+        </div>);
+  }
+ 
 }
 
 SimpleCarousel.PropTypes = {

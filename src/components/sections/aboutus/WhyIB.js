@@ -1,25 +1,31 @@
 import React, { Component, PropTypes} from 'react';
 
 import Colors from '../../../constants/colors';
-import Sprites from '../../../sprites/sprite';
+import Sprites from '../../../constants/sprite';
 import Fonts from '../../../constants/fonts';
 import Card from '../../widgets/card/simpleCard';
 import ButtonA from '../../widgets/button/buttonA';
 import Carousel from '../../widgets/carousel/simpleCarousel';
+import UtilRD from '../../../utils/rd';
 
 export default class WhyIB extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      style: {
-        paddingAdjuster: {
-          padding: '0 0 0 10px'
-        }
-      }
+      style: this.getStyle()
     }
   }
 
+  componentDidMount(){
+    const utilRD = new UtilRD();
+
+    if (utilRD.isTablet(document.body.clientWidth)) {
+      this.setState({
+        style: _.merge({}, this.state.style, this.getStyle('TABLET'))
+      });
+    }
+  }
 
   render() {
 
@@ -27,7 +33,22 @@ export default class WhyIB extends Component {
     
     var carouselData = {
       meta: {
-        id: 'slide-aboutus'
+        id: 'slide-aboutus',
+        style: {
+          background: Colors.blueDark,
+          height: '50px',
+          width: '50px',
+          color: Colors.yellow,
+          textShadow: 'none',
+          opacity: '1',
+          top: '50%',
+          transform: 'translateY(-50%)'
+        },
+        arrowLeft: Sprites.Aboutus.CarouselLeftArrow,
+        arrowRight: Sprites.Aboutus.CarouselRightArrow,
+        indicators: {
+          display: 'none'
+        }
       },
       slides: [{
         wrapper: {
@@ -42,28 +63,60 @@ export default class WhyIB extends Component {
 
     return (
       <div className="container">
-        <div className="row row-eq-height">
-          <div className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0">
+        <div className="row"> 
+          <div className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0" style = {this.state.style.setHeightSm}>
             <Card data={cards.card1} />
           </div>
           <div className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0" style = {this.state.style.paddingAdjuster}>
             <Carousel data={carouselData} />
           </div>
         </div>
-        <div className="row row-eq-height">
-          <div className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0">
+        <div className="row">
+          <div className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0" style = {this.state.style.setHeightLg}>
             <Card data={cards.card3} />
             <Card data={cards.card4} />
           </div>
-          <div className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0">
+          <div className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0" style = {this.state.style.setHeightLg}>
              <Card data={cards.card2} />
-             <ButtonA text="Contáctanos" type='A' />
+             <div style={this.state.style.redBox}><ButtonA text="Contáctanos" type='A' /></div>
           </div>
         </div>
       </div>
     );
   }
-
+  getStyle(type){
+    switch(type){
+      case('TABLET'): 
+      return {
+        setHeightSm: _.merge({}, this.state.style.setHeightSm, {
+          maxHeight: '665px'
+        }),
+        setHeightLg: _.merge({}, this.state.style.setHeightLg, {
+          height: '767px'
+        })
+      }
+      default:
+        return {
+          paddingAdjuster: {
+            padding: '0 0 0 10px',
+          },
+          redBox:{
+            backgroundColor: Colors.red,
+            padding: '0 0 50px 50px',
+            margin: '0 -15px 0 -5px'
+          },
+          setHeightSm: {
+            maxHeight: '500px',
+            overflow: 'hidden',
+            marginBottom: '20px'
+          },
+          setHeightLg: {
+            height: '580px',
+            overflow: 'hidden'
+          }
+        };
+    }
+ }
   getCards() {
     return {
       card1: {
@@ -72,10 +125,8 @@ export default class WhyIB extends Component {
             background: Colors.red,
             padding: '50px',
             position: 'relative',
-            marginBottom: '20px',
             marginLeft: '-15px',
             marginRight: '-5px',
-            maxHeight: '500px'
           }
         },
         elements: [{
@@ -145,8 +196,9 @@ export default class WhyIB extends Component {
              backgroundColor: Colors.yellow,
              width: '320px',
              padding: '50px 40px',
-             margin: '-100px -5px 0 0',
-             float: 'right',
+             position: 'absolute',
+             bottom: '0',
+             right: '10px',
              borderBottomLeftRadius: '45px'
           }
         },

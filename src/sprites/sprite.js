@@ -1,4 +1,20 @@
 module.exports = {
+    "Aboutus": {
+        "CarouselLeftArrow": {
+            "backgroundPosition": "-0px -0px",
+            "width": "8px",
+            "height": "13px",
+            "backgroundImage": "url('../images/sprite-aboutus.png')",
+            "backgroundSize": "16px 13px"
+        },
+        "CarouselRightArrow": {
+            "backgroundPosition": "-8px -0px",
+            "width": "8px",
+            "height": "13px",
+            "backgroundImage": "url('../images/sprite-aboutus.png')",
+            "backgroundSize": "16px 13px"
+        }
+    },
     "General": {
         "Agent": {
             "backgroundPosition": "-106px -94px",
