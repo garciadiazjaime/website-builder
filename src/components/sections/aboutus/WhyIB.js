@@ -169,8 +169,7 @@ export default class WhyIB extends Component {
         {
           type: 'description',
           text: ['En interBrokers creemos en la importancia de la seguridad y tranquilidad de nuestros clientes, es por eso que promovemos una cultura enfocada en la prevención para impulsar su crecimiento, desarrollo y transformación.<br />A través de un servicio cálido, efectivo y personalizado nos ocupamos de entender sus necesidades y ofrecerle una solución integral.<br />Interbrokers ofrece servicios de consultoría, trámites, permisos y seguros, siendo expertos en el sector transportista binacional.'],
-          style:  _.merge({}, Fonts.typeI, {
-          })
+          style:  _.merge({}, Fonts.typeI, {})
         }]
       },
       card3: {
