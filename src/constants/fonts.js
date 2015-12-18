@@ -160,5 +160,15 @@ export default {
     color: Colors.blueDark,
     fontFamily: 'noto-sans-regular',
     fontSize: '35px'
+  },
+  typeO: {
+    color: Colors.blueDark,
+    fontFamily: 'noto-sans-bold',
+    fontSize: '16px'
+  },
+  typeP: {
+    color: 'white',
+    fontFamily: 'noto-sans-bold',
+    fontSize: '25px'
   }
 }

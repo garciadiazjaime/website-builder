@@ -15,6 +15,15 @@ module.exports = {
             "backgroundSize": "16px 13px"
         }
     },
+    "AboutusMembers": {
+        "MemberAvatar": {
+            "backgroundPosition": "-0px -0px",
+            "width": "112px",
+            "height": "112px",
+            "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-aboutus-members.png')",
+            "backgroundSize": "112px 112px"
+        }
+    },
     "General": {
         "Agent": {
             "backgroundPosition": "-106px -94px",

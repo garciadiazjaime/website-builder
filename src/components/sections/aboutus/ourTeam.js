@@ -17,6 +17,7 @@ export default class OurTeam extends Component {
           marginTop: '-150px',
           paddingTop: '250px',
           position: 'relative',
+          marginBottom: '100px',
           zIndex: '-1'
         }
       }
@@ -25,14 +26,30 @@ export default class OurTeam extends Component {
 
 
   render() {
-    var data = {
+    var cards = this.getCards();
+   
+    return (
+      <div style={this.state.style.wrapper}>
+        <div className="container">
+          <div className="row">
+            <div className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0">
+              <Card data={cards.cardA} />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  getCards(){
+    return {
       cardA: {
         wrapper: {
           style: {
             marginLeft: '35px'
           }
         },
-        cards:[{
+        elements:[{
           type: 'title',
           text: ['Nuestro Equipo'],
           style: _.merge({}, Fonts.typeE,{
@@ -46,17 +63,5 @@ export default class OurTeam extends Component {
         }]
       }
     }
-   
-    return (
-      <div style={this.state.style.wrapper}>
-        <div className="container">
-          <div className="row">
-            <div className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0">
-              <Card data={data.cardA} />
-            </div>
-          </div>
-        </div>
-      </div>
-    );
   }
 }

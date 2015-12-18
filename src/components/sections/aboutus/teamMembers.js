@@ -41,6 +41,30 @@ export default class OurTeam extends Component {
             <div className="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-0">
               <CardX data={cards.cardA} />
             </div>
+            <div className="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-0">
+              <CardX data={cards.cardA} />
+            </div>
+            <div className="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-0">
+              <CardX data={cards.cardA} />
+            </div>
+            <div className="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-0">
+              <CardX data={cards.cardA} />
+            </div>
+            <div className="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-0">
+              <CardX data={cards.cardA} />
+            </div>
+            <div className="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-0">
+              <CardX data={cards.cardA} />
+            </div>
+            <div className="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-0">
+              <CardX data={cards.cardA} />
+            </div>
+            <div className="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-0">
+              <CardX data={cards.cardA} />
+            </div>
+            <div className="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-0">
+              <CardX data={cards.cardA} />
+            </div>
           </div>
         </div>
       </div>
@@ -50,31 +74,38 @@ export default class OurTeam extends Component {
   getCards() {
     return {
       cardA: {
+        image: _.merge ({}, Sprites.AboutusMembers.MemberAvatar, {
+          margin: '35px auto 0'
+        }),
         wrapper: {
           style: {
-            padding: '35px 40px 50px',
+            padding: '0 40px 50px',
             textAlign: 'center'
           }
         },
         elements: [{
           type: 'title',
           text: ['Nombre Apellido'],
-          style: {
+          style: _.merge({}, Fonts.typeO, {
             colors: Colors.red
-          }
+          })
         },
         {
           type: 'subtitle',
           text: ['Puesto'],
-          style: {
-            colors: Colors.red
-          }
+          style: _.merge({}, Fonts.typeA,{
+            borderBottom: '1px solid #383939',
+            paddingBottom: '11px',
+            marginTop: '0',
+            width: '100px',
+            display: 'inline-block'
+          })
         }, {
           type: 'description',
-          text: ['998-0009-33', 'mail@dominio.com'],
-          style: {
+          text: ['998-0009-33<br />mail@dominio.com'],
+          style: _.merge({}, Fonts.typeA,{
             colors: Colors.red
-          }
+          })
         }]
       }
     };

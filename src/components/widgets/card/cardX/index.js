@@ -37,6 +37,7 @@ export default class CardX extends Component {
 
     return (
       <div style={style.wrapperStyle}>
+        <div style={this.props.data.image}></div>
         <SimpleCard data={this.props.data} />
       </div>
     );
@@ -48,7 +49,7 @@ export default class CardX extends Component {
         return {
           wrapperStyle: {
             background: 'white',
-            margin: '0 -11px'
+            margin: '4px -11px'
           }
         };
         break;
@@ -78,7 +79,8 @@ export default class CardX extends Component {
           },
           wrapperStyle: {
             background: 'white',
-            margin: '0 -11px'
+            margin: '4px -11px',
+            paddingTop: '1px'
           }
         };
     }

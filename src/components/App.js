@@ -18,6 +18,7 @@ import BigPleck from './sections/aboutus/bigPleck';
 import WhyIB from './sections/aboutus/WhyIB';
 import OurTeam from './sections/aboutus/ourTeam';
 import TeamMembers from './sections/aboutus/teamMembers';
+import OurServices from './sections/aboutus/ourServices';
 
 export default function App() {
 
@@ -29,6 +30,7 @@ export default function App() {
       <WhyIB />
       <OurTeam />
       <TeamMembers />
+      <OurServices />
       <Footer />
       <Powered />
     </div>
