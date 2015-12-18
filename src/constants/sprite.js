@@ -198,7 +198,7 @@ module.exports = {
     },
     "Services": {
         "Bullet": {
-            "backgroundPosition": "-434px -146px",
+            "backgroundPosition": "-501px -146px",
             "width": "12px",
             "height": "12px",
             "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-services.png')",
@@ -218,22 +218,50 @@ module.exports = {
             "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-services.png')",
             "backgroundSize": "519px 303px"
         },
+        "IconConsultoria": {
+            "backgroundPosition": "-434px -178px",
+            "width": "25px",
+            "height": "36px",
+            "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-services.png')",
+            "backgroundSize": "519px 303px"
+        },
+        "IconPermisos": {
+            "backgroundPosition": "-473px -146px",
+            "width": "28px",
+            "height": "27px",
+            "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-services.png')",
+            "backgroundSize": "519px 303px"
+        },
+        "IconSeguros": {
+            "backgroundPosition": "-434px -146px",
+            "width": "39px",
+            "height": "32px",
+            "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-services.png')",
+            "backgroundSize": "519px 303px"
+        },
+        "IconTramites": {
+            "backgroundPosition": "-459px -178px",
+            "width": "24px",
+            "height": "30px",
+            "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-services.png')",
+            "backgroundSize": "519px 303px"
+        },
         "PermisosEntrante": {
-            "backgroundPosition": "-372px -0px",
+            "backgroundPosition": "-147px -230px",
             "width": "147px",
             "height": "73px",
             "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-services.png')",
             "backgroundSize": "519px 303px"
         },
         "PermisosUsa": {
-            "backgroundPosition": "-0px -230px",
+            "backgroundPosition": "-372px -0px",
             "width": "147px",
             "height": "73px",
             "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-services.png')",
             "backgroundSize": "519px 303px"
         },
         "Permisos": {
-            "backgroundPosition": "-115px -0px",
+            "backgroundPosition": "-0px -0px",
             "width": "115px",
             "height": "115px",
             "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-services.png')",
@@ -254,14 +282,14 @@ module.exports = {
             "backgroundSize": "519px 303px"
         },
         "SegurosMx": {
-            "backgroundPosition": "-230px -0px",
+            "backgroundPosition": "-230px -81px",
             "width": "142px",
             "height": "81px",
             "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-services.png')",
             "backgroundSize": "519px 303px"
         },
         "SegurosUsa": {
-            "backgroundPosition": "-230px -81px",
+            "backgroundPosition": "-230px -0px",
             "width": "142px",
             "height": "81px",
             "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-services.png')",
@@ -275,21 +303,21 @@ module.exports = {
             "backgroundSize": "519px 303px"
         },
         "TramitesMx": {
-            "backgroundPosition": "-372px -73px",
+            "backgroundPosition": "-0px -230px",
             "width": "147px",
             "height": "73px",
             "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-services.png')",
             "backgroundSize": "519px 303px"
         },
         "TramitesUsa": {
-            "backgroundPosition": "-147px -230px",
+            "backgroundPosition": "-372px -73px",
             "width": "147px",
             "height": "73px",
             "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-services.png')",
             "backgroundSize": "519px 303px"
         },
         "Tramites": {
-            "backgroundPosition": "-0px -0px",
+            "backgroundPosition": "-115px -0px",
             "width": "115px",
             "height": "115px",
             "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-services.png')",

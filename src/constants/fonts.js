@@ -10,6 +10,11 @@ export class FontA {
 
   static getVariation(variation) {
     switch (variation) {
+      case 'servicesA':
+        return _.merge({}, this.style, {
+          color: Colors.grayDark,
+          fontSize: '12px'
+        });
       case 'headerA':
         return _.merge({}, this.style, {
           color: Colors.grayDark,
@@ -74,6 +79,11 @@ export class FontABold {
         return _.merge({}, this.style, {
           color: Colors.white,
           fontSize: '25px',
+        });
+      case 'servicesE':
+        return _.merge({}, this.style, {
+          color: Colors.red,
+          fontSize: '30px'
         });
       case 'homeA':
         return _.merge({}, this.style, {

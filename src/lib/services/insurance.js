@@ -2,8 +2,11 @@ import Sprites from '../../constants/sprite';
 
 module.exports = {
   title: 'Seguros para Vehículos Comerciales',
+  shortTitle: 'Seguros',
   type: 'title',
   sprite: Sprites.Services.Seguros,
+  logo: Sprites.Services.IconSeguros,
+  intro: ['Portafolio de seguros para <br /> <b>Vehiculos Comerciales.</b> <br /> Cobertura en México y USA.'],
   elements: [
     {
       title: 'Seguros con <br />cobertura en <br />USA',

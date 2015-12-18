@@ -2,19 +2,14 @@ import React, { Component, PropTypes} from 'react';
 import _ from 'lodash';
 
 import {FontABold} from '../../../../constants/fonts';
-import Sprites from '../../../../constants/sprite';
-import Colors from '../../../../constants/colors';
-import ButtonA from '../../button/buttonA';
-import ButtonC from '../../button/buttonC';
-import SimpleCard from '../simpleCard';
 
 
 export default class CardL extends Component {
 
   render(){
     var style = this.getStyle();
-    var iconEl = this.getIcon(this.props.type, style.sprite);
-    var title = this.getTitle(this.props.type, this.props.title, style);
+    var iconEl = this.getIcon(this.props.data, style.sprite);
+    var title = this.getTitle(this.props.data, style);
 
     return (
       <div style={style.wrapper}>
@@ -24,8 +19,8 @@ export default class CardL extends Component {
     );
   }
 
-  getIcon(type, sprite) {
-    switch (type.toUpperCase()) {
+  getIcon(data, sprite) {
+    switch (data.type.toUpperCase()) {
       case 'TITLE':
         return (<div style={sprite} className="pull-left"></div>);
       default:
@@ -33,12 +28,12 @@ export default class CardL extends Component {
     }
   }
 
-  getTitle(type, title, style) {
-    switch (type.toUpperCase()) {
+  getTitle(data, style) {
+    switch (data.type.toUpperCase()) {
       case 'TITLE':
-        return (<h1 style={style.title}>{title}</h1>);
+        return (<h1 style={style.title}>{data.title}</h1>);
       case 'SUBTITLE':
-        return (<h2 style={style.subtitle}>{title}</h2>);
+        return (<h2 style={style.subtitle}>{data.title}</h2>);
       default:
         return null;
     }
@@ -53,8 +48,8 @@ export default class CardL extends Component {
         borderBottom: '5px solid',
         paddingBottom: '10px',
         paddingTop: '14px',
-        marginLeft: '25px',
-        paddingLeft: '120px'
+        paddingLeft: '120px',
+        marginLeft: '25px'
       }),
       subtitle: _.merge(FontABold.getVariation('servicesA'), {
         borderBottom: '5px solid',
@@ -62,13 +57,11 @@ export default class CardL extends Component {
         paddingTop: '14px',
         marginLeft: '140px'
       }),
-      sprite: this.props.sprite ? this.props.sprite : null
+      sprite: this.props.data.sprite ? this.props.data.sprite : null
     }
   }
 }
 
 CardL.propTypes = {
-  title: React.PropTypes.string.isRequired,
-  type: React.PropTypes.string.isRequired,
-  sprite: React.PropTypes.object
+  data: React.PropTypes.object.isRequired
 };

@@ -2,8 +2,11 @@ import Sprites from '../../constants/sprite';
 
 module.exports = {
   title: 'Permisos',
+  shortTitle: 'Permisos',
   type: 'title',
   sprite: Sprites.Services.Permisos,
+  logo: Sprites.Services.IconPermisos,
+  intro: ['Permisos para Vehículos <br /> Comerciales en USA y <br /><b>Nuevos Entrantes</b>'],
   elements: [
     {
       title: 'Permisos <br />en USA',

@@ -2,8 +2,11 @@ import Sprites from '../../constants/sprite';
 
 module.exports = {
   title: 'Trámites',
+  shortTitle: 'Trámites',
   type: 'title',
   sprite: Sprites.Services.Tramites,
+  logo: Sprites.Services.IconTramites,
+  intro: ['Trámites en USA y México, <br /> <b>Placas DMV y SCT en México.</b>'],
   elements: [
     {
       title: 'Trámites en USA',

@@ -2,8 +2,11 @@ import Sprites from '../../constants/sprite';
 
 module.exports = {
   title: 'Consultoría',
+  shortTitle: 'Consultoría',
   type: 'title',
   sprite: Sprites.Services.Consultoria,
+  logo: Sprites.Services.IconConsultoria,
+  intro: ['Programa de Servicio de Auditorias<br /> (México y USA)'],
   elements: [
     {
       title: 'Consultoría y <br /> Servicio de <br />Auditorías <br /> (México y USA)',
