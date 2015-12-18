@@ -9,7 +9,6 @@ import Colors from '../../constants/colors';
 import {FontABold} from '../../constants/fonts';
 import ButtonD from '../widgets/button/ButtonD';
 
-
 export default class Menu extends Component {
 
   constructor(props) {

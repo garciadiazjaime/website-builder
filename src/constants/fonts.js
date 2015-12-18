@@ -128,35 +128,77 @@ export default {
     fontFamily: 'noto-sans-bold',
     fontSize: '12px',
     textTransform: 'uppercase'
-  },
+  }, 
   typeC: {
-    color: 'white',
-    fontSize: '25px',
-    fontFamily: 'noto-sans-bold'
+    color: '#fff',
+    fontFamily: 'noto-sans-bold',
+    fontSize: '50px'
   },
   typeD: {
+    color: '#fff',
+    fontFamily: 'noto-sans-regular',
+    fontSize: '25px'
+  },
+  typeE: {
+    color: Colors.blueDark,
+    fontFamily: 'noto-sans-bold',
+    fontSize: '25px',
+
+    textTransform: 'uppercase'
+  },
+  typeF: {
+    color: Colors.blueDark,
+    fontFamily: 'noto-sans-bold',
+    fontSize: '30px'
+  },
+  typeG: {
+    color: Colors.yellow,
+    fontFamily: 'noto-sans-bold',
+    fontSize: '25px'
+  },
+  typeH: {
+    color: '#fff',
+    fontFamily: 'noto-sans-bold',
+    fontSize: '16px'
+  },
+  typeI: {
+    color: '#fff',
+    fontFamily: 'noto-sans-regular',
+    fontSize: '16px'
+  },
+  typeJ: {
+    color: '#fff',
+    fontFamily: 'noto-sans-bold',
+    fontSize: '35px'
+  },
+  typeK: {
     color: 'white',
     fontSize: '30px',
     fontFamily: 'noto-sans-bold'
   },
-  typeE: {
+  typeL: {
     color: Colors.yellow,
     fontSize: '25px',
     fontWeight: 'bold'
   },
-  typeF: {
+  typeM: {
     color: Colors.white,
     fontFamily: 'noto-sans-regular',
     fontSize: '16px'
   },
-  typeG: {
+  typeN: {
     color: Colors.blueDark,
     fontFamily: 'noto-sans-regular',
-    fontSize: '14px'
+    fontSize: '35px'
   },
-  typeH: {
+  typeO: {
     color: Colors.blueDark,
     fontFamily: 'noto-sans-bold',
-    fontSize: '12px'
+    fontSize: '16px'
+  },
+  typeP: {
+    color: 'white',
+    fontFamily: 'noto-sans-bold',
+    fontSize: '25px'
   }
 }

@@ -1,4 +1,29 @@
 module.exports = {
+    "Aboutus": {
+        "CarouselLeftArrow": {
+            "backgroundPosition": "-0px -0px",
+            "width": "8px",
+            "height": "13px",
+            "backgroundImage": "url('../images/sprite-aboutus.png')",
+            "backgroundSize": "16px 13px"
+        },
+        "CarouselRightArrow": {
+            "backgroundPosition": "-8px -0px",
+            "width": "8px",
+            "height": "13px",
+            "backgroundImage": "url('../images/sprite-aboutus.png')",
+            "backgroundSize": "16px 13px"
+        }
+    },
+    "AboutusMembers": {
+        "MemberAvatar": {
+            "backgroundPosition": "-0px -0px",
+            "width": "112px",
+            "height": "112px",
+            "backgroundImage": "url('../images/sprite-aboutus-members.png')",
+            "backgroundSize": "112px 112px"
+        }
+    },
     "General": {
         "Agent": {
             "backgroundPosition": "-462px -47px",
