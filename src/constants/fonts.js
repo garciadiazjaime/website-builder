@@ -15,20 +15,25 @@ export class FontA {
           color: Colors.grayDark,
           fontSize: '12px'
         });
-      case 'headerA':
-        return _.merge({}, this.style, {
-          color: Colors.grayDark,
-          fontSize: '16px'
-        });
       case 'introA':
         return _.merge({}, this.style, {
           color: Colors.blueDark,
           fontSize: '14px'
         });
+      case 'headerA':
+        return _.merge({}, this.style, {
+          color: Colors.grayDark,
+          fontSize: '16px'
+        });
       case 'homeA':
         return _.merge({}, this.style, {
           color: Colors.white,
           fontSize: '16px'
+        });
+      case 'procedureA':
+        return _.merge({}, this.style, {
+          color: Colors.white,
+          fontSize: '25px'
         });
       default:
         return null;
@@ -128,7 +133,7 @@ export default {
     fontFamily: 'noto-sans-bold',
     fontSize: '12px',
     textTransform: 'uppercase'
-  }, 
+  },
   typeC: {
     color: '#fff',
     fontFamily: 'noto-sans-bold',
