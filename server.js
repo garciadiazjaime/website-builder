@@ -6,6 +6,7 @@ var webpackHotMiddleware = require('webpack-hot-middleware');
 var config = require('./webpack.config.js');
 var conf = require('./config');
 
+// todo: remove comments
 // const app from express();
 // import routes from require('./routes');
 
