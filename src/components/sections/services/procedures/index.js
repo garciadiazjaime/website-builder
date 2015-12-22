@@ -5,6 +5,8 @@ import {FontA, FontABold} from '../../../../constants/fonts';
 import Sprites from '../../../../constants/sprite';
 import BannerC from '../../../widgets/banner/bannerC';
 import Intro from './intro';
+import ServiceItem from '../item';
+import items from '../../../../lib/services/procedures';
 
 
 export default class Procedures extends Component {
@@ -19,6 +21,8 @@ export default class Procedures extends Component {
         <BannerC data={cards.banner} sprite={style.banner.sprite} />
 
         <Intro style={style.intro}/>
+
+        <ServiceItem data={items.elements[0].elements} />
 
       </div>
     );

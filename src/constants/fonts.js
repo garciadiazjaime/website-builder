@@ -65,6 +65,16 @@ export class FontABold {
           fontSize: '12px',
           textTransform: 'uppercase'
         });
+      case 'procedureD':
+        return _.merge({}, this.style, {
+          color: Colors.grayDark,
+          fontSize: '12px'
+        });
+      case 'procedureC':
+        return _.merge({}, this.style, {
+          color: Colors.grayMedium,
+          fontSize: '12px'
+        });
       case 'homeD':
         return _.merge({}, this.style, {
           color: Colors.white,
@@ -88,6 +98,11 @@ export class FontABold {
       case 'homeC':
         return _.merge({}, this.style, {
           color: Colors.white,
+          fontSize: '25px',
+        });
+      case 'procedureE':
+        return _.merge({}, this.style, {
+          color: Colors.red,
           fontSize: '25px',
         });
       case 'servicesE':
@@ -130,6 +145,21 @@ export class FontABold {
     }
   }
 }
+
+export class NoFont {
+
+  static getVariation(variation) {
+    switch (variation) {
+      case 'procedureA':
+        return {
+          color: Colors.blueDark,
+          fontSize: '12px'
+        };
+      default:
+        return null;
+    }
+  }
+};
 
 
 export default {

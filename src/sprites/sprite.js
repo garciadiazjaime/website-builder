@@ -164,6 +164,13 @@ module.exports = {
         }
     },
     "Procedures": {
+        "BackToMenu": {
+            "backgroundPosition": "-147px -450px",
+            "width": "32px",
+            "height": "19px",
+            "backgroundImage": "url('../images/sprite-procedures.png')",
+            "backgroundSize": "1024px 523px"
+        },
         "BannerUsa": {
             "backgroundPosition": "-0px -0px",
             "width": "1024px",

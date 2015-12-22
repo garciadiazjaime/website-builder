@@ -30,6 +30,12 @@ export default class ButtonA extends Component {
           backgroundColor: Colors.white,
           color: Colors.purple
         });
+        break;
+      case 'C':
+        theme = _.merge(theme, {
+          backgroundColor: Colors.blueDark,
+          color: Colors.yellow
+        });
     }
 
     return {
