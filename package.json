@@ -21,7 +21,6 @@
     "css-selector-tokenizer": "^0.5.4",
     "cssnano": "^3.3.2",
     "express": "^4.13.3",
-    "history": "^1.13.1",
     "jquery": "^2.1.4",
     "less": "^2.5.3",
     "loader-utils": "^0.2.11",
