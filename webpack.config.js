@@ -39,16 +39,9 @@ module.exports = {
     publicPath: '/'
   },
 
-  host: conf.get('ipaddress'),
-  port: conf.get('port'),
-
   module: {
     loaders: [
-      {
-        test: /\.js?$/,
-        exclude: /node_modules/,
-        loaders: ['react-hot', 'babel?cacheDirectory&stage=0&optional=runtime']
-      },
+      { test: /\.js?$/, exclude: /node_modules/, loaders: ['react-hot', 'babel?cacheDirectory&stage=0&optional=runtime']},
       { test: /\.json?$/, loader: 'json'},
       { test: /\.css$/, loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]'},
       { test: /bootstrap\/js\//, loader: 'imports?jQuery=jquery' },
