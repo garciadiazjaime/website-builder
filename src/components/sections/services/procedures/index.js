@@ -7,7 +7,8 @@ import BannerC from '../../../widgets/banner/bannerC';
 import Intro from './intro';
 import ServiceItem from '../item';
 import items from '../../../../lib/services/procedures';
-
+import Tmp from '../../aboutus/ourServices';
+// todo: change tmp for a real component including btn on left
 
 export default class Procedures extends Component {
 
@@ -16,14 +17,17 @@ export default class Procedures extends Component {
     var style = this.getStyle();
 
     return (
-      <div className="container">
+      <div>
+        <div className="container">
 
-        <BannerC data={cards.banner} sprite={style.banner.sprite} />
+          <BannerC data={cards.banner} sprite={style.banner.sprite} />
 
-        <Intro style={style.intro}/>
+          <Intro style={style.intro}/>
 
-        <ServiceItem data={items.elements[0].elements} />
+          <ServiceItem data={items.elements[0].elements} />
 
+        </div>
+        <Tmp />
       </div>
     );
   }
