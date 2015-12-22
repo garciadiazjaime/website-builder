@@ -1,62 +1,68 @@
 import React, { Component, PropTypes} from 'react';
 import _ from 'lodash';
 
-// import {FontA, FontABold} from '../../../constants/fonts';
-// import Colors from '../../../constants/colors';
-//
-// import ServiceCover from './serviceCover/';
-// import ServiceDetail from './serviceDetail/';
-
+import {FontA, FontABold} from '../../../../constants/fonts';
+import Sprites from '../../../../constants/sprite';
 import BannerC from '../../../widgets/banner/bannerC';
+import Intro from './intro';
+import ServiceItem from '../item';
+import items from '../../../../lib/services/procedures';
 
 
 export default class Procedures extends Component {
 
-  render(){
-    // var cards = this.getCards();
+  render() {
+    var cards = this.getCards();
+    var style = this.getStyle();
 
     return (
       <div className="container">
 
-        <BannerC />
+        <BannerC data={cards.banner} sprite={style.banner.sprite} />
+
+        <Intro style={style.intro}/>
+
+        <ServiceItem data={items.elements[0].elements} />
 
       </div>
     );
   }
 
-  // getCards() {
-  //   return {
-  //     cardA: {
-  //       wrapper: {
-  //         style: {
-  //           backgroundColor: Colors.red,
-  //           paddingLeft: '50px',
-  //           minHeight: '400px'
-  //         }
-  //       },
-  //       elements: [{
-  //         type: 'title',
-  //         text: ['SERVICIOS'],
-  //         style: _.merge({}, FontABold.getVariation('homeC'), {
-  //           paddingTop: '45px',
-  //           marginTop: '0'
-  //         })
-  //       }, {
-  //         type: 'subtitle',
-  //         text: ['Servicios integrales a <br /> ambos lados de la frontera.'],
-  //         style: _.merge({}, FontABold.getVariation('servicesD'), {
-  //           paddingTop: '20px'
-  //         })
-  //       }, {
-  //         type: 'description',
-  //         text: ['Todo lo que neceitas para operar tu emprsa transportista en <br />Estados Unidos y México.'],
-  //         style: _.merge({}, FontA.getVariation('homeA'), {
-  //           paddingTop: '30px'
-  //         })
-  //       }]
-  //     }
-  //   }
-  // }
+  getCards() {
+    return {
+      banner: {
+        wrapper: {
+          style: {
+            marginLeft: '50px',
+            marginTop: '140px',
+            height: '210'
+          }
+        },
+        elements: [{
+          type: 'title',
+          text: ['Evita largas filas, te <br />ayudamos a gestionar <br />todos tus trámites.'],
+          style: _.merge({}, FontABold.getVariation('servicesD'), {
+          })
+        },
+        {
+          type: 'description',
+          text: ['Con más de 15 años de experiencia, somos <br />expertos en el sector transportista binacional.'],
+          style: _.merge({}, FontA.getVariation('homeA'), {
+            marginTop: '30px'
+          })
+        }]
+      }
+    }
+  }
+
+  getStyle() {
+    return {
+      banner: {
+        sprite: Sprites.Procedures.BannerUsa
+      }
+    };
+  }
+
 }
 
 Procedures.propTypes = {

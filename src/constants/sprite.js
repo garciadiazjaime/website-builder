@@ -163,6 +163,29 @@ module.exports = {
             "backgroundSize": "768px 768px"
         }
     },
+    "Procedures": {
+        "BackToMenu": {
+            "backgroundPosition": "-147px -450px",
+            "width": "32px",
+            "height": "19px",
+            "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-procedures.png')",
+            "backgroundSize": "1024px 523px"
+        },
+        "BannerUsa": {
+            "backgroundPosition": "-0px -0px",
+            "width": "1024px",
+            "height": "450px",
+            "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-procedures.png')",
+            "backgroundSize": "1024px 523px"
+        },
+        "ProcedureUsa": {
+            "backgroundPosition": "-0px -450px",
+            "width": "147px",
+            "height": "73px",
+            "backgroundImage": "url('http://127.0.0.1:3000/images/sprite-procedures.png')",
+            "backgroundSize": "1024px 523px"
+        }
+    },
     "Seguros": {
         "SegurosMxServicio": {
             "backgroundPosition": "-115px -0px",

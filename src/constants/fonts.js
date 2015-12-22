@@ -15,20 +15,25 @@ export class FontA {
           color: Colors.grayDark,
           fontSize: '12px'
         });
-      case 'headerA':
-        return _.merge({}, this.style, {
-          color: Colors.grayDark,
-          fontSize: '16px'
-        });
       case 'introA':
         return _.merge({}, this.style, {
           color: Colors.blueDark,
           fontSize: '14px'
         });
+      case 'headerA':
+        return _.merge({}, this.style, {
+          color: Colors.grayDark,
+          fontSize: '16px'
+        });
       case 'homeA':
         return _.merge({}, this.style, {
           color: Colors.white,
           fontSize: '16px'
+        });
+      case 'procedureA':
+        return _.merge({}, this.style, {
+          color: Colors.white,
+          fontSize: '25px'
         });
       default:
         return null;
@@ -60,6 +65,16 @@ export class FontABold {
           fontSize: '12px',
           textTransform: 'uppercase'
         });
+      case 'procedureD':
+        return _.merge({}, this.style, {
+          color: Colors.grayDark,
+          fontSize: '12px'
+        });
+      case 'procedureC':
+        return _.merge({}, this.style, {
+          color: Colors.grayMedium,
+          fontSize: '12px'
+        });
       case 'homeD':
         return _.merge({}, this.style, {
           color: Colors.white,
@@ -75,9 +90,19 @@ export class FontABold {
           color: Colors.grayMedium,
           fontSize: '16px',
         });
+      case 'procedureA':
+        return _.merge({}, this.style, {
+          color: Colors.grayDark,
+          fontSize: '21px',
+        });
       case 'homeC':
         return _.merge({}, this.style, {
           color: Colors.white,
+          fontSize: '25px',
+        });
+      case 'procedureE':
+        return _.merge({}, this.style, {
+          color: Colors.red,
           fontSize: '25px',
         });
       case 'servicesE':
@@ -105,6 +130,11 @@ export class FontABold {
           color: Colors.grayDark,
           fontSize: '35px'
         });
+      case 'procedureB':
+        return _.merge({}, this.style, {
+          color: Colors.yellow,
+          fontSize: '35px'
+        });
       case 'servicesD':
         return _.merge({}, this.style, {
           color: Colors.white,
@@ -115,6 +145,21 @@ export class FontABold {
     }
   }
 }
+
+export class NoFont {
+
+  static getVariation(variation) {
+    switch (variation) {
+      case 'procedureA':
+        return {
+          color: Colors.blueDark,
+          fontSize: '12px'
+        };
+      default:
+        return null;
+    }
+  }
+};
 
 
 export default {
@@ -128,7 +173,7 @@ export default {
     fontFamily: 'noto-sans-bold',
     fontSize: '12px',
     textTransform: 'uppercase'
-  }, 
+  },
   typeC: {
     color: '#fff',
     fontFamily: 'noto-sans-bold',

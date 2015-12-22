@@ -1,69 +1,32 @@
 import React, { Component, PropTypes} from 'react';
 
-import Colors from '../../../../constants/colors';
-import Sprites from '../../../../constants/sprite';
-import Fonts from '../../../../constants/fonts';
-import Card from '../../card/simpleCard';
+import SimpleCard from '../../card/simpleCard';
 
 
-export default class Banner extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      style: {
-        wrapper: {
-          backgroundImage: "url('http://127.0.0.1:3000/images/aboutUs-banner-bg.jpg')",
-          height: '512px',
-          position: 'relative'
-        },
-        vAligner: {
-          position: 'relative',
-          top: '50%',
-          transform: 'translateY(-50%)',
-          WebkitTransform: 'translateY(-50%)',
-          MsTransform: 'translateY(-50%)'
-        },
-      }
-    };
-  }
-
+export default class BannerC extends Component {
 
   render() {
-    var cards = this.getCards();
+    var style = this.getStyle();
 
     return (
         <div className="container">
-          <div className="row" style={this.state.style.wrapper}>
-            <div className="col-xs-10 col-xs-offset-1 col-sm-offset-0" style={this.state.style.vAligner}>
-              <Card data={cards.cardA} />
+          <div className="row" style={style.wrapper}>
+            <div className="col-xs-10 col-xs-offset-1 col-sm-offset-0">
+              <SimpleCard data={this.props.data} />
             </div>
           </div>
         </div>
     );
   }
 
-  getCards() {
+  getStyle() {
     return {
-      cardA: {
-        wrapper: {
-          style: {
-            marginLeft: '35px'
-          }
-        },
-        elements: [{
-          type: 'title',
-          text: ['Expertos en el sector transportista binacional.'],
-          style: _.merge({}, Fonts.typeC, {
-            marginBottom: '50px'
-          })
-        },
-        {
-          type: 'description',
-          text: [' Con más de 15 años de experiencia, somos <br />expertos en el sector transportista binacional.'],
-          style: _.merge({}, Fonts.typeD)
-        }]
-      }
-    };
+      wrapper: _.merge({}, this.props.sprite, {
+      })
+    }
   }
+};
+
+BannerC.propTypes = {
+  data: React.PropTypes.object.isRequired
 }
