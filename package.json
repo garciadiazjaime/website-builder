@@ -8,7 +8,8 @@
     "dev": "./node_modules/nodemon/bin/nodemon.js server.js",
     "reload": "webpack-dev-server --hot --inline",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sprites": "gulp build:sprites"
+    "sprites": "gulp build:sprites",
+    "deploy": "git push openshift HEAD:master"
   },
   "author": "Jaime Garcia <garciadiazjaime@gmail.com>",
   "license": "MIT",

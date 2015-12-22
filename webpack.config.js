@@ -3,6 +3,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var conf = require('./config');
 
 module.exports = {
 
@@ -37,6 +38,9 @@ module.exports = {
     filename: '[name].js',
     publicPath: '/'
   },
+
+  host: conf.get('ipaddress'),
+  port: conf.get('port'),
 
   module: {
     loaders: [
