@@ -55,7 +55,11 @@
     "redux-devtools-diff-monitor": "2.0.2",
     "sprity": "^1.0.8",
     "sprity-js": "^1.1.0",
-    "webpack": "1.12.2",
+    "webpack": "^1.12.6",
     "webpack-dev-server": "^1.14.0"
+  },
+  "engines": {
+    "node": ">= 4.1.1",
+    "npm": ">= 2.14.4"
   }
 }
