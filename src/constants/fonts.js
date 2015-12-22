@@ -80,6 +80,11 @@ export class FontABold {
           color: Colors.grayMedium,
           fontSize: '16px',
         });
+      case 'procedureA':
+        return _.merge({}, this.style, {
+          color: Colors.grayDark,
+          fontSize: '21px',
+        });
       case 'homeC':
         return _.merge({}, this.style, {
           color: Colors.white,
@@ -108,6 +113,11 @@ export class FontABold {
       case 'servicesB':
         return _.merge({}, this.style, {
           color: Colors.grayDark,
+          fontSize: '35px'
+        });
+      case 'procedureB':
+        return _.merge({}, this.style, {
+          color: Colors.yellow,
           fontSize: '35px'
         });
       case 'servicesD':

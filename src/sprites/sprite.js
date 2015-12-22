@@ -169,7 +169,14 @@ module.exports = {
             "width": "1024px",
             "height": "450px",
             "backgroundImage": "url('../images/sprite-procedures.png')",
-            "backgroundSize": "1024px 450px"
+            "backgroundSize": "1024px 523px"
+        },
+        "ProcedureUsa": {
+            "backgroundPosition": "-0px -450px",
+            "width": "147px",
+            "height": "73px",
+            "backgroundImage": "url('../images/sprite-procedures.png')",
+            "backgroundSize": "1024px 523px"
         }
     },
     "Seguros": {

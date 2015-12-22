@@ -3,12 +3,8 @@ import _ from 'lodash';
 
 import {FontA, FontABold} from '../../../../constants/fonts';
 import Sprites from '../../../../constants/sprite';
-// import Colors from '../../../constants/colors';
-//
-// import ServiceCover from './serviceCover/';
-// import ServiceDetail from './serviceDetail/';
-
 import BannerC from '../../../widgets/banner/bannerC';
+import Intro from './intro';
 
 
 export default class Procedures extends Component {
@@ -20,7 +16,9 @@ export default class Procedures extends Component {
     return (
       <div className="container">
 
-        <BannerC data={cards.cardA} sprite={style.sprite} />
+        <BannerC data={cards.banner} sprite={style.banner.sprite} />
+
+        <Intro style={style.intro}/>
 
       </div>
     );
@@ -28,11 +26,12 @@ export default class Procedures extends Component {
 
   getCards() {
     return {
-      cardA: {
+      banner: {
         wrapper: {
           style: {
             marginLeft: '50px',
-            marginTop: '140px'
+            marginTop: '140px',
+            height: '210'
           }
         },
         elements: [{
@@ -44,7 +43,7 @@ export default class Procedures extends Component {
         {
           type: 'description',
           text: ['Con más de 15 años de experiencia, somos <br />expertos en el sector transportista binacional.'],
-          style: _.merge({}, FontA.getVariation('procedureA'), {
+          style: _.merge({}, FontA.getVariation('homeA'), {
             marginTop: '30px'
           })
         }]
@@ -54,7 +53,9 @@ export default class Procedures extends Component {
 
   getStyle() {
     return {
-      sprite: Sprites.Procedures.BannerUsa
+      banner: {
+        sprite: Sprites.Procedures.BannerUsa
+      }
     };
   }
 
