@@ -17,6 +17,7 @@
     "bootstrap-sass": "^3.3.5",
     "bootstrap-sass-loader": "^1.0.9",
     "bootstrap-webpack": "0.0.5",
+    "convict": "^1.0.2",
     "css-selector-tokenizer": "^0.5.4",
     "cssnano": "^3.3.2",
     "express": "^4.13.3",
