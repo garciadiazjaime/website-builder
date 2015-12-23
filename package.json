@@ -1,7 +1,7 @@
 {
   "name": "interbrokers",
   "version": "1.0.0",
-  "description": "==== FE",
+  "description": "Interbrokers new website",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
