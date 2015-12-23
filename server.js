@@ -65,5 +65,5 @@ app.listen(app.get('port'), app.get('ipaddress'), function onStart(err) {
   if (err) {
     console.log(err);
   }
-  console.info('==> 🌎 Listening on port %s. Open up http://localhost:%s/ in your browser.', app.get('port'), app.get('ipaddress'));
+  console.info('==> 🌎 Open up %s:%s in your browser.', app.get('ipaddress'), app.get('port'));
 });
