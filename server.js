@@ -6,6 +6,7 @@ var webpackHotMiddleware = require('webpack-hot-middleware');
 var config = require('./webpack.config.js');
 var conf = require('./config');
 
+// todo: remove comments
 // const app from express();
 // import routes from require('./routes');
 
@@ -19,11 +20,11 @@ var conf = require('./config');
 // });
 
 
-const isDeveloping = true; //process.env.NODE_ENV !== 'production';
-const port = isDeveloping ? 3000 : process.env.PORT;
+const isDeveloping = false; //process.env.NODE_ENV !== 'production';
+const port = conf.get('port');
 const app = express();
 
-// app.use(express.static(__dirname + '/dist'));
+app.use(express.static(__dirname + '/dist'));
 
 
 app.all('*', function(req, res, next) {
@@ -53,9 +54,9 @@ if (isDeveloping) {
   app.use(webpackHotMiddleware(compiler));
 }
 
-// app.get('*', function response(req, res) {
-//   res.sendFile(path.join(__dirname, 'dist/index.html'));
-// });
+app.get('*', function response(req, res) {
+  res.sendFile(path.join(__dirname, 'dist/index.html'));
+});
 
 app.set('ipaddress', conf.get('ipaddress'));
 app.set('port', conf.get('port'));
@@ -64,5 +65,5 @@ app.listen(app.get('port'), app.get('ipaddress'), function onStart(err) {
   if (err) {
     console.log(err);
   }
-  console.info('==> 🌎 Listening on port %s. Open up http://localhost:%s/ in your browser.', app.get('port'), app.get('ipaddress'));
+  console.info('==> 🌎 Open up %s:%s in your browser.', app.get('ipaddress'), app.get('port'));
 });

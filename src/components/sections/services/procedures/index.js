@@ -37,7 +37,7 @@ export default class Procedures extends Component {
       banner: {
         wrapper: {
           style: {
-            marginLeft: '50px',
+            marginLeft: '35px',
             marginTop: '140px',
             height: '210'
           }

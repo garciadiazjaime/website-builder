@@ -2,6 +2,7 @@ import React, { Component, PropTypes} from 'react';
 
 import Colors from '../../../constants/colors';
 import Sprites from '../../../sprites/sprite';
+import URLs from '../../../constants/urls';
 import Fonts from '../../../constants/fonts';
 import Card from '../../widgets/card/simpleCard';
 
@@ -12,7 +13,8 @@ export default class OurTeam extends Component {
     this.state = {
       style: {
         wrapper: {
-          background: "url('http://127.0.0.1:3000/images/ourteam-bg.png') no-repeat center bottom",
+          backgroundImage: "url('" + URLs.IMAGES + "')",
+          background: "url('" + URLs.IMAGES + "ourteam-bg.png') no-repeat center bottom",
           backgroundSize: '100% auto',
           marginTop: '-150px',
           paddingTop: '250px',
@@ -27,7 +29,7 @@ export default class OurTeam extends Component {
 
   render() {
     var cards = this.getCards();
-   
+
     return (
       <div style={this.state.style.wrapper}>
         <div className="container">

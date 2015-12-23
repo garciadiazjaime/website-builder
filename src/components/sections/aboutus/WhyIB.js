@@ -2,6 +2,7 @@ import React, { Component, PropTypes} from 'react';
 
 import Colors from '../../../constants/colors';
 import Sprites from '../../../constants/sprite';
+import URLs from '../../../constants/urls';
 import Fonts from '../../../constants/fonts';
 import Card from '../../widgets/card/simpleCard';
 import ButtonA from '../../widgets/button/buttonA';
@@ -30,7 +31,7 @@ export default class WhyIB extends Component {
   render() {
 
     var cards = this.getCards();
-    
+
     var carouselData = {
       meta: {
         id: 'slide-aboutus',
@@ -53,7 +54,7 @@ export default class WhyIB extends Component {
       slides: [{
         wrapper: {
           style: {
-            backgroundImage: "url('http://127.0.0.1:3000/images/aboutus_carousel_slide1.jpg')",
+            backgroundImage: "url('" + URLs.IMAGES + "aboutus_carousel_slide1.jpg')",
             backgroundSize: "cover",
             height: '500px'
           }
@@ -63,7 +64,7 @@ export default class WhyIB extends Component {
 
     return (
       <div className="container">
-        <div className="row"> 
+        <div className="row">
           <div className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0" style = {this.state.style.setHeightSm}>
             <Card data={cards.card1} />
           </div>
@@ -86,7 +87,7 @@ export default class WhyIB extends Component {
   }
   getStyle(type){
     switch(type){
-      case('TABLET'): 
+      case('TABLET'):
       return {
         setHeightSm: _.merge({}, this.state.style.setHeightSm, {
           maxHeight: '665px'
@@ -209,8 +210,7 @@ export default class WhyIB extends Component {
           })
         }]
       }
-      
+
     }
   }
 }
-
