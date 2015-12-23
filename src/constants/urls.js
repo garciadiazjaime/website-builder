@@ -1,3 +1,3 @@
 module.exports = {
-  IMAGES: 'http://127.0.0.1:3000/images/'
+  IMAGES: 'http://www.ib.somospool.com/images/'
 }
