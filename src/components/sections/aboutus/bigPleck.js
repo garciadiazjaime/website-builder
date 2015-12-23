@@ -2,7 +2,7 @@ import React, { Component, PropTypes} from 'react';
 
 import Colors from '../../../constants/colors';
 import Sprites from '../../../constants/sprite';
-
+import URLs from '../../../constants/urls';
 import YellowFleck from '../../widgets/YellowFleck';
 
 import Banner from './banner';
@@ -16,7 +16,7 @@ export default class BigPleck extends Component {
     this.state = {
       style: {
         pleckContainer: {
-          backgroundImage: "url('http://127.0.0.1:3000/images/aboutus_bigPleck.png')",
+          backgroundImage: "url('" + URLs.IMAGES + "aboutus_bigPleck.png')",
           backgroundPosition: window.innerWidth*.55 + 'px top',
           backgroundRepeat: 'no-repeat',
           marginBottom: '20px'

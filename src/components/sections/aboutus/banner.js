@@ -3,6 +3,7 @@ import React, { Component, PropTypes} from 'react';
 import Colors from '../../../constants/colors';
 import Sprites from '../../../constants/sprite';
 import Fonts from '../../../constants/fonts';
+import URLs from '../../../constants/urls';
 import Card from '../../widgets/card/simpleCard';
 import YellowFleck from '../../widgets/YellowFleck';
 
@@ -14,7 +15,7 @@ export default class Banner extends Component {
     this.state = {
       style: {
         wrapper: {
-          backgroundImage: "url('http://127.0.0.1:3000/images/aboutUs-banner-bg.jpg')",
+          backgroundImage: "url('" + URLs.IMAGES + "aboutUs-banner-bg.jpg')",
           height: '512px',
           position: 'relative'
         },
@@ -32,7 +33,7 @@ export default class Banner extends Component {
 
   render() {
     var cards = this.getCards();
-    
+
     return (
         <div className="container">
           <div className="row" style={this.state.style.wrapper}>
@@ -65,7 +66,7 @@ export default class Banner extends Component {
           text: [' Con más de 15 años de experiencia, somos <br />expertos en el sector transportista binacional.'],
           style: _.merge({}, Fonts.typeD)
         }]
-      }  
+      }
     };
   }
 }
